@@ -43,6 +43,7 @@ The benchamrks are divided into two main categories
 | Falcon-Sign-Verify|706555  | 4070 | 2356	   | 32 	   | 3    |
 
 ## Directory Structure
+```plaintext
 Benchmarks/
 ├── How To/
 │   ├── BaseProject
@@ -85,7 +86,7 @@ Benchmarks/
 ├── Utility
 ├── Frame.hex
 └── README.md
-
+```
  
 ## Getting Started
 
