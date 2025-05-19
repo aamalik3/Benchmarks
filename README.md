@@ -43,48 +43,49 @@ The benchamrks are divided into two main categories
 | Falcon-Sign-Verify|706555  | 4070 | 2356	   | 32 	   | 3    |
 
 ## Directory Structure
- Bencharks
- |_How To
-	|_BaseProject
-	|_ctr_example
-	|_RTL_IP
-	|_User Guide
-	|_Useful commands
- |_PL-based Accelerators
-	|_FFT
-	|_H.264
-	|_Image Classfication 
-	|_Image Processor 
-	|_JPEG Decoder
-	|_PNG Decoder
-	|_ML-KEM (Khyber)
-	|_OpenNOC
-	|_Scalable Matrix Multiplication
-	|_Trigonometry Core
- |_RISC-V Accelerators
-	|_Accelerator Source Code
-	   |_AES-128   
-	   |_SHA-256   
-	   |_GEMM      
-	   |_BFS       
-	   |_Sort      
-	   |_NW        
-	   |_KMP       
-	   |_Dhrystone 
-	   |_Coremark 
-	   |_Falcon-Key-Gen
-	   |_Falcon-Sign-Gen
-	   |_Falcon-Sign-Verif	   
-	|_Bitfiles
-	|_PR Checkpoints
-	|_cv32e40x Source Code
-	|_memfiles (RISC-V Generated files)
-	|_RISC_BENCHMARKS_BASE_PROJ (Can be used to generate integrate new benchamrks)
-	|_RISC_RTL_Project (Actual Project to test preemptions)
- |_PS C Source Code
- |_Utility
- |_Frame.hex
- |_README.md
+Benchmarks/
+├── How To/
+│   ├── BaseProject
+│   ├── ctr_example
+│   ├── RTL_IP
+│   ├── User Guide
+│   └── Useful commands
+├── PL-based Accelerators/
+│   ├── FFT
+│   ├── H.264
+│   ├── Image Classification
+│   ├── Image Processor
+│   ├── JPEG Decoder
+│   ├── PNG Decoder
+│   ├── ML-KEM (Khyber)
+│   ├── OpenNOC
+│   ├── Scalable Matrix Multiplication
+│   └── Trigonometry Core
+├── RISC-V Accelerators/
+│   ├── Accelerator Source Code/
+│   │   ├── AES-128
+│   │   ├── SHA-256
+│   │   ├── GEMM
+│   │   ├── BFS
+│   │   ├── Sort
+│   │   ├── NW
+│   │   ├── KMP
+│   │   ├── Dhrystone
+│   │   ├── Coremark
+│   │   ├── Falcon-Key-Gen
+│   │   ├── Falcon-Sign-Gen
+│   │   └── Falcon-Sign-Verif
+│   ├── Bitfiles
+│   ├── PR Checkpoints
+│   ├── cv32e40x Source Code
+│   ├── memfiles (RISC-V Generated files)
+│   ├── RISC_BENCHMARKS_BASE_PROJ (Can be used to integrate new benchmarks)
+│   └── RISC_RTL_Project (Actual Project to test preemptions)
+├── PS C Source Code
+├── Utility
+├── Frame.hex
+└── README.md
+
  
 ## Getting Started
 
