@@ -1,0 +1,11 @@
+===================================
+Configuration Memory information
+===================================
+File Format        BIN
+Interface          SMAPX32
+Size               2M
+Start Address      0x00000000
+End Address        0x001FFFFF
+
+Addr1         Addr2         Date                    File(s)
+0x00000000    0x0015468B    Oct 26 14:47:34 2023    ./falcon_delay_2/falcon_delay_2_pblock_risc_partial.bit

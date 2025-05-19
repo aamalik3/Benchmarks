@@ -1,0 +1,46 @@
+module CUSTOM_IPS (
+    input          clock,
+    input          reset,
+    output         Output_1,
+    output  [31:0] Output_Bus
+);
+
+wire [7:0]        pci_exp_txp;
+wire [7:0]        pci_exp_txn;
+wire               sys_reset_n;
+wire               i_wr_data_ready;
+wire               pcie_link_status;
+wire o_wr_data_valid;
+wire o_rd_data_ready;
+wire o_axi_strm_clk;
+wire reset_n;
+wire sys_clk_n;
+
+assign reset_n = ~reset;
+
+dyract#(
+.RECONFIG_ENABLE (0)
+ )
+ dyract (
+.pci_exp_rxp		(8'hFF),
+.pci_exp_rxn		(8'hAA), 
+.pci_exp_txp		(pci_exp_txp),
+.pci_exp_txn		(pci_exp_txn),  
+.sys_clk_p		(clock),
+.sys_clk_n		(sys_clk_n),
+.sys_reset_n		(reset_n),
+                
+.o_wr_data_valid	(o_wr_data_valid),
+.i_wr_data_ready	(1'b1),
+.o_wr_data		(Output_Bus),
+.i_rd_data_valid	(1'b1),
+.o_rd_data_ready	(o_rd_data_ready),
+.i_rd_data		(256'h0123_0123_0123_0123_4567_4567_4567_4567_89AB_89AB_89AB_89AB_CDEF_CDEF_CDEF_CDEF),
+               
+.o_axi_strm_clk	(o_axi_strm_clk),
+.pcie_link_status(pcie_link_status),
+.heartbeat		(Output_1)
+);
+
+
+endmodule

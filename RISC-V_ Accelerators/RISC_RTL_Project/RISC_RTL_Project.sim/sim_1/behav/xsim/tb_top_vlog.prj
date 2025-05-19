@@ -1,0 +1,55 @@
+# compile verilog/system verilog design source files
+sv xil_defaultlib  --include "../../../../RISC_RTL_Project.srcs/sources_1/imports/AES_RISC" \
+"../../../../RISC_RTL_Project.srcs/sources_1/imports/AES_RISC/cv32e40x_core/include/cv32e40x_pkg.sv" \
+"../../../../RISC_RTL_Project.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_a_decoder.sv" \
+"../../../../RISC_RTL_Project.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_alignment_buffer.sv" \
+"../../../../RISC_RTL_Project.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_alu.sv" \
+"../../../../RISC_RTL_Project.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_alu_b_cpop.sv" \
+"../../../../RISC_RTL_Project.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_b_decoder.sv" \
+"../../../../RISC_RTL_Project.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_clic_int_controller.sv" \
+"../../../../RISC_RTL_Project.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_compressed_decoder.sv" \
+"../../../../RISC_RTL_Project.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_controller.sv" \
+"../../../../RISC_RTL_Project.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_controller_bypass.sv" \
+"../../../../RISC_RTL_Project.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_controller_fsm.sv" \
+"../../../../RISC_RTL_Project.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_core.sv" \
+"../../../../RISC_RTL_Project.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_cs_registers.sv" \
+"../../../../RISC_RTL_Project.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_csr.sv" \
+"../../../../RISC_RTL_Project.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_data_obi_interface.sv" \
+"../../../../RISC_RTL_Project.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_debug_triggers.sv" \
+"../../../../RISC_RTL_Project.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_decoder.sv" \
+"../../../../RISC_RTL_Project.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_div.sv" \
+"../../../../RISC_RTL_Project.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_ex_stage.sv" \
+"../../../../RISC_RTL_Project.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_ff_one.sv" \
+"../../../../RISC_RTL_Project.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_i_decoder.sv" \
+"../../../../RISC_RTL_Project.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_id_stage.sv" \
+"../../../../RISC_RTL_Project.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_if_stage.sv" \
+"../../../../RISC_RTL_Project.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_instr_obi_interface.sv" \
+"../../../../RISC_RTL_Project.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_int_controller.sv" \
+"../../../../RISC_RTL_Project.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_load_store_unit.sv" \
+"../../../../RISC_RTL_Project.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_lsu_response_filter.sv" \
+"../../../../RISC_RTL_Project.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_m_decoder.sv" \
+"../../../../RISC_RTL_Project.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_mpu.sv" \
+"../../../../RISC_RTL_Project.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_mult.sv" \
+"../../../../RISC_RTL_Project.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_pc_target.sv" \
+"../../../../RISC_RTL_Project.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_pma.sv" \
+"../../../../RISC_RTL_Project.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_prefetch_unit.sv" \
+"../../../../RISC_RTL_Project.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_prefetcher.sv" \
+"../../../../RISC_RTL_Project.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_register_file.sv" \
+"../../../../RISC_RTL_Project.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_register_file_wrapper.sv" \
+"../../../../RISC_RTL_Project.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_sequencer.sv" \
+"../../../../RISC_RTL_Project.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_sim_clock_gate.sv" \
+"../../../../RISC_RTL_Project.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_sleep_unit.sv" \
+"../../../../RISC_RTL_Project.srcs/sim_1/imports/AES_RISC.sim/cv32e40x_tb_wrapper_backup.sv" \
+"../../../../RISC_RTL_Project.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_wb_stage.sv" \
+"../../../../RISC_RTL_Project.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_wpt.sv" \
+"../../../../RISC_RTL_Project.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_write_buffer.sv" \
+"../../../../RISC_RTL_Project.srcs/sim_1/imports/AES_RISC.sim/dp_ram.sv" \
+"../../../../RISC_RTL_Project.srcs/sources_1/imports/AES_RISC/cv32e40x_core/if_c_obi.sv" \
+"../../../../RISC_RTL_Project.srcs/sources_1/imports/AES_RISC/cv32e40x_core/if_xif.sv" \
+"../../../../RISC_RTL_Project.srcs/sim_1/imports/AES_RISC.sim/tb_top.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

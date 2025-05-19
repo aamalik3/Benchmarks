@@ -1,0 +1,7 @@
+set title "post28"
+set key outside right
+set size ratio 1.875
+set xrange [0:8000]
+set yrange [0:15000]
+plot 'post28.dt' index 0 using 2:3 title 'LUT', '' index 1 using 2:3 title 'FF', '' index 2 using 2:3 title 'macro', '' index 3 using 2:3 title 'pblock0', '' index 4 using 2:3 title 'pblock1', '' index 5 using 2:3 title 'fixed'
+pause -1

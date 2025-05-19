@@ -1,0 +1,170 @@
+# do {testbench_compile.do}
+# ** Warning: (vlib-34) Library already exists at "questa_lib/work".
+# Errors: 0, Warnings: 1
+# ** Warning: (vlib-34) Library already exists at "questa_lib/msim".
+# Errors: 0, Warnings: 1
+# ** Warning: (vlib-34) Library already exists at "questa_lib/msim/xil_defaultlib".
+# Errors: 0, Warnings: 1
+# QuestaSim-64 vmap 2022.3 Lib Mapping Utility 2022.07 Jul 18 2022
+# vmap xil_defaultlib questa_lib/msim/xil_defaultlib 
+# Modifying modelsim.ini
+# ** Warning: (vlog-159) Mode option -64 is not supported  and will be ignored.
+# QuestaSim-64 vlog 2022.3 Compiler 2022.07 Jul 18 2022
+# Start time: 16:23:44 on Aug 14,2023
+# vlog -64 -incr -work xil_defaultlib ../../../../AES_RISC.srcs/sources_1/ip/ila_1/sim/ila_1.v ../../../../AES_RISC.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_sim_netlist.v 
+# -- Compiling module ila_1
+# -- Skipping module clk_wiz_0
+# -- Skipping module clk_wiz_0_clk_wiz_0_clk_wiz
+# -- Compiling module glbl
+# 
+# Top level modules:
+# 	ila_1
+# 	clk_wiz_0
+# 	glbl
+# End time: 16:23:44 on Aug 14,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# ** Warning: (vlog-159) Mode option -64 is not supported  and will be ignored.
+# QuestaSim-64 vlog 2022.3 Compiler 2022.07 Jul 18 2022
+# Start time: 16:23:44 on Aug 14,2023
+# vlog -64 -incr -sv -work xil_defaultlib ../../../../AES_RISC.srcs/sources_1/imports/new/Z_AES.sv ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/include/cv32e40x_pkg.sv ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_a_decoder.sv ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_alignment_buffer.sv ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_alu.sv ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_alu_b_cpop.sv ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_b_decoder.sv ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_clic_int_controller.sv ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_compressed_decoder.sv ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_controller.sv ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_controller_bypass.sv ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_controller_fsm.sv ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_core.sv ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_cs_registers.sv ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_csr.sv ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_data_obi_interface.sv ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_debug_triggers.sv ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_decoder.sv ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_div.sv ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_ex_stage.sv ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_ff_one.sv ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_i_decoder.sv ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_id_stage.sv ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_if_stage.sv ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_instr_obi_interface.sv ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_int_controller.sv ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_load_store_unit.sv ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_lsu_response_filter.sv ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_m_decoder.sv ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_mpu.sv ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_mult.sv ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_pc_target.sv ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_pma.sv ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_prefetch_unit.sv ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_prefetcher.sv ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_register_file.sv ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_register_file_wrapper.sv ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_sequencer.sv ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_sim_clock_gate.sv ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_sleep_unit.sv ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_wb_stage.sv ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_wpt.sv ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/top/cv32e40x_wrapper.sv ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_write_buffer.sv ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/top/dp_ram_1.sv ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/top/dp_ram_2.sv ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/top/dp_ram_3.sv ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/top/dp_ram_4.sv ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/if_c_obi.sv ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/if_xif.sv 
+# -- Compiling module Z_AES
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/include/cv32e40x_pkg.sv(1435): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# -- Skipping package cv32e40x_pkg
+# -- Skipping module cv32e40x_a_decoder
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_alignment_buffer.sv(34): (vlog-13314) Defaulting port 'ctrl_fsm_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_alignment_buffer.sv(53): (vlog-13314) Defaulting port 'resp_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# -- Skipping module cv32e40x_alignment_buffer
+# -- Skipping module cv32e40x_alu
+# -- Skipping module cv32e40x_alu_b_cpop
+# -- Skipping module cv32e40x_b_decoder
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_clic_int_controller.sv(53): (vlog-13314) Defaulting port 'mstatus_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_clic_int_controller.sv(55): (vlog-13314) Defaulting port 'mintstatus_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_clic_int_controller.sv(56): (vlog-13314) Defaulting port 'mcause_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# -- Skipping module cv32e40x_clic_int_controller
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_compressed_decoder.sv(34): (vlog-13314) Defaulting port 'instr_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# -- Skipping module cv32e40x_compressed_decoder
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_controller.sv(55): (vlog-13314) Defaulting port 'if_id_pipe_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_controller.sv(67): (vlog-13314) Defaulting port 'id_ex_pipe_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_controller.sv(69): (vlog-13314) Defaulting port 'ex_wb_pipe_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_controller.sv(103): (vlog-13314) Defaulting port 'mcause_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_controller.sv(111): (vlog-13314) Defaulting port 'dcsr_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_controller.sv(121): (vlog-13314) Defaulting port 'rf_raddr_id_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# -- Skipping module cv32e40x_controller
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_controller_bypass.sv(41): (vlog-13314) Defaulting port 'rf_raddr_id_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_controller_bypass.sv(44): (vlog-13314) Defaulting port 'if_id_pipe_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_controller_bypass.sv(45): (vlog-13314) Defaulting port 'id_ex_pipe_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_controller_bypass.sv(46): (vlog-13314) Defaulting port 'ex_wb_pipe_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# -- Skipping module cv32e40x_controller_bypass
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_controller_fsm.sv(47): (vlog-13314) Defaulting port 'ctrl_byp_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_controller_fsm.sv(55): (vlog-13314) Defaulting port 'if_id_pipe_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_controller_fsm.sv(65): (vlog-13314) Defaulting port 'id_ex_pipe_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_controller_fsm.sv(70): (vlog-13314) Defaulting port 'ex_wb_pipe_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_controller_fsm.sv(98): (vlog-13314) Defaulting port 'dcsr_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_controller_fsm.sv(99): (vlog-13314) Defaulting port 'mcause_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# -- Skipping module cv32e40x_controller_fsm
+# -- Skipping module cv32e40x_core
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_cs_registers.sv(77): (vlog-13314) Defaulting port 'id_ex_pipe_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_cs_registers.sv(81): (vlog-13314) Defaulting port 'ex_wb_pipe_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_cs_registers.sv(84): (vlog-13314) Defaulting port 'ctrl_fsm_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# -- Skipping module cv32e40x_cs_registers
+# -- Skipping module cv32e40x_csr
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_data_obi_interface.sv(46): (vlog-13314) Defaulting port 'trans_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# -- Skipping module cv32e40x_data_obi_interface
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_debug_triggers.sv(76): (vlog-13314) Defaulting port 'ctrl_fsm_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# -- Skipping module cv32e40x_debug_triggers
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_decoder.sv(54): (vlog-13314) Defaulting port 'if_id_pipe_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_decoder.sv(90): (vlog-13314) Defaulting port 'rf_raddr_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_decoder.sv(100): (vlog-13314) Defaulting port 'ctrl_fsm_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# -- Skipping module cv32e40x_decoder
+# -- Skipping module cv32e40x_div
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_ex_stage.sv(44): (vlog-13314) Defaulting port 'id_ex_pipe_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_ex_stage.sv(55): (vlog-13314) Defaulting port 'ctrl_fsm_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# -- Skipping module cv32e40x_ex_stage
+# -- Skipping module cv32e40x_ff_one
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_i_decoder.sv(39): (vlog-13314) Defaulting port 'ctrl_fsm_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# -- Skipping module cv32e40x_i_decoder
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_id_stage.sv(52): (vlog-13314) Defaulting port 'if_id_pipe_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_id_stage.sv(58): (vlog-13314) Defaulting port 'ex_wb_pipe_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_id_stage.sv(61): (vlog-13314) Defaulting port 'ctrl_byp_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_id_stage.sv(62): (vlog-13314) Defaulting port 'ctrl_fsm_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_id_stage.sv(64): (vlog-13314) Defaulting port 'mcause_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_id_stage.sv(93): (vlog-13314) Defaulting port 'rf_rdata_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# -- Skipping module cv32e40x_id_stage
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_if_stage.sv(64): (vlog-13314) Defaulting port 'ctrl_fsm_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# -- Skipping module cv32e40x_if_stage
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_instr_obi_interface.sv(46): (vlog-13314) Defaulting port 'trans_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# -- Skipping module cv32e40x_instr_obi_interface
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_int_controller.sv(39): (vlog-13314) Defaulting port 'mstatus_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# -- Skipping module cv32e40x_int_controller
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_load_store_unit.sv(45): (vlog-13314) Defaulting port 'ctrl_fsm_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_load_store_unit.sv(51): (vlog-13314) Defaulting port 'id_ex_pipe_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# -- Skipping module cv32e40x_load_store_unit
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_lsu_response_filter.sv(43): (vlog-13314) Defaulting port 'trans_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_lsu_response_filter.sv(47): (vlog-13314) Defaulting port 'resp_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# -- Skipping module cv32e40x_lsu_response_filter
+# -- Skipping module cv32e40x_m_decoder
+# -- Skipping module cv32e40x_mpu
+# -- Skipping module cv32e40x_mult
+# -- Skipping module cv32e40x_pc_target
+# -- Skipping module cv32e40x_pma
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_prefetch_unit.sv(39): (vlog-13314) Defaulting port 'ctrl_fsm_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_prefetch_unit.sv(58): (vlog-13314) Defaulting port 'resp_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# -- Skipping module cv32e40x_prefetch_unit
+# -- Skipping module cv32e40x_prefetcher
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_register_file.sv(40): (vlog-13314) Defaulting port 'raddr_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_register_file.sv(44): (vlog-13314) Defaulting port 'waddr_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_register_file.sv(45): (vlog-13314) Defaulting port 'wdata_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_register_file.sv(46): (vlog-13314) Defaulting port 'we_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# -- Skipping module cv32e40x_register_file
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_register_file_wrapper.sv(42): (vlog-13314) Defaulting port 'raddr_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_register_file_wrapper.sv(46): (vlog-13314) Defaulting port 'waddr_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_register_file_wrapper.sv(47): (vlog-13314) Defaulting port 'wdata_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_register_file_wrapper.sv(48): (vlog-13314) Defaulting port 'we_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# -- Skipping module cv32e40x_register_file_wrapper
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_sequencer.sv(43): (vlog-13314) Defaulting port 'instr_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# -- Skipping module cv32e40x_sequencer
+# -- Skipping module cv32e40x_clock_gate
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_sleep_unit.sv(65): (vlog-13314) Defaulting port 'ctrl_fsm_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# -- Skipping module cv32e40x_sleep_unit
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_wb_stage.sv(46): (vlog-13314) Defaulting port 'ex_wb_pipe_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_wb_stage.sv(49): (vlog-13314) Defaulting port 'ctrl_fsm_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# -- Skipping module cv32e40x_wb_stage
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_wpt.sv(46): (vlog-13314) Defaulting port 'mpu_resp_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_wpt.sv(52): (vlog-13314) Defaulting port 'core_trans_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# -- Skipping module cv32e40x_wpt
+# -- Compiling module cv32e40x_wrapper
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_write_buffer.sv(44): (vlog-13314) Defaulting port 'trans_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# -- Skipping module cv32e40x_write_buffer
+# -- Compiling module dp_ram_1
+# -- Compiling module dp_ram_2
+# -- Compiling module dp_ram_3
+# -- Compiling module dp_ram_4
+# -- Skipping interface if_c_obi
+# -- Skipping interface if_xif
+# 
+# Top level modules:
+# 	Z_AES
+# End time: 16:23:44 on Aug 14,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 65
+# ** Warning: (vlog-159) Mode option -64 is not supported  and will be ignored.
+# QuestaSim-64 vlog 2022.3 Compiler 2022.07 Jul 18 2022
+# Start time: 16:23:46 on Aug 14,2023
+# vlog -64 -incr -work xil_defaultlib ../../../../AES_RISC.srcs/sim_1/new/testbench.v 
+# -- Skipping module testbench
+# ** Warning: ../../../../AES_RISC.srcs/sim_1/new/testbench.v(36): (vlog-2283) Extra semicolon in $unit (global) scope.
+# ** Warning: ../../../../AES_RISC.srcs/sim_1/new/testbench.v(36): (vlog-2284) Empty $unit scope found.
+# -- Skipping package testbench_v_unit
+# 
+# Top level modules:
+# 	testbench
+# End time: 16:23:46 on Aug 14,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 3
+# QuestaSim-64 vlog 2022.3 Compiler 2022.07 Jul 18 2022
+# Start time: 16:23:46 on Aug 14,2023
+# vlog -work xil_defaultlib glbl.v 
+# -- Compiling module glbl
+# 
+# Top level modules:
+# 	glbl
+# End time: 16:23:46 on Aug 14,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0

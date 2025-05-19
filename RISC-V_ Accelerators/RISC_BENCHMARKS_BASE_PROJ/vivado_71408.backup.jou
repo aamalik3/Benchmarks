@@ -1,0 +1,36 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Wed Jan  3 16:51:02 2024
+# Process ID: 71408
+# Current directory: C:/Users/aamalik3/Desktop/ICAP_Readback/Benchmarks/RISC_BENCHMARKS_BASE_PROJ
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent78372 C:\Users\aamalik3\Desktop\ICAP_Readback\Benchmarks\RISC_BENCHMARKS_BASE_PROJ\RISC_BENCHMARKS_BASE_PROJ.xpr
+# Log file: C:/Users/aamalik3/Desktop/ICAP_Readback/Benchmarks/RISC_BENCHMARKS_BASE_PROJ/vivado.log
+# Journal file: C:/Users/aamalik3/Desktop/ICAP_Readback/Benchmarks/RISC_BENCHMARKS_BASE_PROJ\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/aamalik3/Desktop/ICAP_Readback/Benchmarks/RISC_BENCHMARKS_BASE_PROJ/RISC_BENCHMARKS_BASE_PROJ.xpr
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 30
+wait_on_run -timeout 10 synth_1
+open_run synth_1 -name synth_1
+set benchmarkname "sha256"
+read_checkpoint -cell [get_cell design_1_i/RISC_BENCHMARK_IP/inst] ../../Checkpoints/$benchmarkname.dcp
+pwd
+cd ../Bitfiles/WithCRC/
+read_checkpoint -cell [get_cell design_1_i/RISC_BENCHMARK_IP/inst] ../../Checkpoints/$benchmarkname.dcp
+update_compile_order -fileset sources_1
+opt_design
+place_design
+route_design
+file mkdir $benchmarkname
+write_bitstream -force -file ./$benchmarkname/$benchmarkname.bit
+write_cfgmem -force -format BIN -interface SMAPx32 -disablebitswap -loadbit "up 0 ./$benchmarkname/${benchmarkname}_pblock_risc_partial.bit" ./$benchmarkname/${benchmarkname}_partial.bin
+file delete ./$benchmarkname/${benchmarkname}.prm
+export_ip_user_files -of_objects  [get_files C:/Users/aamalik3/Desktop/ICAP_Readback/Benchmarks/Checkpoints/${benchmarkname}.dcp] -no_script -reset -force -quiet
+remove_files  C:/Users/aamalik3/Desktop/ICAP_Readback/Benchmarks/Checkpoints/${benchmarkname}.dcp
+report_utilization -hierarchical > ./$benchmarkname/${benchmarkname}_.txt
+report_utilization -name ./$benchmarkname/${benchmarkname}_area_utilization
+update_compile_order -fileset sources_1

@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1709058489">
+  <File Type="PA-TCL" Name="RISC_BENCHMARK_IP.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="RISC_BENCHMARK_IP_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="RISC_BENCHMARK_IP_reports.tcl"/>
+  <File Type="RDS-RDS" Name="RISC_BENCHMARK_IP.vds"/>
+  <File Type="RDS-UTIL" Name="RISC_BENCHMARK_IP_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="RISC_BENCHMARK_IP_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="RISC_BENCHMARK_IP.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="RISC_BENCHMARK_IP_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="RISC_BENCHMARK_IP_timing_summary_synth.pb"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/AES_RISC/cv32e40x_core/include/cv32e40x_pkg.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../AES_RISC/cv32e40x_core/include/cv32e40x_pkg.sv"/>
+        <Attr Name="ImportTime" Val="1683669414"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_a_decoder.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../AES_RISC/cv32e40x_core/cv32e40x_a_decoder.sv"/>
+        <Attr Name="ImportTime" Val="1683669311"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_alignment_buffer.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../AES_RISC/cv32e40x_core/cv32e40x_alignment_buffer.sv"/>
+        <Attr Name="ImportTime" Val="1683777389"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_alu.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../AES_RISC/cv32e40x_core/cv32e40x_alu.sv"/>
+        <Attr Name="ImportTime" Val="1683669311"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_alu_b_cpop.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../AES_RISC/cv32e40x_core/cv32e40x_alu_b_cpop.sv"/>
+        <Attr Name="ImportTime" Val="1683669309"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_b_decoder.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../AES_RISC/cv32e40x_core/cv32e40x_b_decoder.sv"/>
+        <Attr Name="ImportTime" Val="1683669308"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_clic_int_controller.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../AES_RISC/cv32e40x_core/cv32e40x_clic_int_controller.sv"/>
+        <Attr Name="ImportTime" Val="1683669323"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_compressed_decoder.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../AES_RISC/cv32e40x_core/cv32e40x_compressed_decoder.sv"/>
+        <Attr Name="ImportTime" Val="1683669312"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_controller.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../AES_RISC/cv32e40x_core/cv32e40x_controller.sv"/>
+        <Attr Name="ImportTime" Val="1683669315"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_controller_bypass.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../AES_RISC/cv32e40x_core/cv32e40x_controller_bypass.sv"/>
+        <Attr Name="ImportTime" Val="1683669313"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_controller_fsm.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../AES_RISC/cv32e40x_core/cv32e40x_controller_fsm.sv"/>
+        <Attr Name="ImportTime" Val="1683669316"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_core.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../AES_RISC/cv32e40x_core/cv32e40x_core.sv"/>
+        <Attr Name="ImportTime" Val="1684781785"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_cs_registers.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../AES_RISC/cv32e40x_core/cv32e40x_cs_registers.sv"/>
+        <Attr Name="ImportTime" Val="1683669325"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_csr.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../AES_RISC/cv32e40x_core/cv32e40x_csr.sv"/>
+        <Attr Name="ImportTime" Val="1683669322"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_data_obi_interface.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../AES_RISC/cv32e40x_core/cv32e40x_data_obi_interface.sv"/>
+        <Attr Name="ImportTime" Val="1683669326"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_debug_triggers.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../AES_RISC/cv32e40x_core/cv32e40x_debug_triggers.sv"/>
+        <Attr Name="ImportTime" Val="1683669335"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_decoder.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../AES_RISC/cv32e40x_core/cv32e40x_decoder.sv"/>
+        <Attr Name="ImportTime" Val="1683669332"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_div.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../AES_RISC/cv32e40x_core/cv32e40x_div.sv"/>
+        <Attr Name="ImportTime" Val="1683669330"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_ex_stage.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../AES_RISC/cv32e40x_core/cv32e40x_ex_stage.sv"/>
+        <Attr Name="ImportTime" Val="1683669328"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_ff_one.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../AES_RISC/cv32e40x_core/cv32e40x_ff_one.sv"/>
+        <Attr Name="ImportTime" Val="1683669331"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_i_decoder.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../AES_RISC/cv32e40x_core/cv32e40x_i_decoder.sv"/>
+        <Attr Name="ImportTime" Val="1683669335"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_id_stage.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../AES_RISC/cv32e40x_core/cv32e40x_id_stage.sv"/>
+        <Attr Name="ImportTime" Val="1683669336"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_if_stage.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../AES_RISC/cv32e40x_core/cv32e40x_if_stage.sv"/>
+        <Attr Name="ImportTime" Val="1683669338"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_instr_obi_interface.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../AES_RISC/cv32e40x_core/cv32e40x_instr_obi_interface.sv"/>
+        <Attr Name="ImportTime" Val="1683669340"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_int_controller.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../AES_RISC/cv32e40x_core/cv32e40x_int_controller.sv"/>
+        <Attr Name="ImportTime" Val="1683669338"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_load_store_unit.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../AES_RISC/cv32e40x_core/cv32e40x_load_store_unit.sv"/>
+        <Attr Name="ImportTime" Val="1683669341"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_lsu_response_filter.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../AES_RISC/cv32e40x_core/cv32e40x_lsu_response_filter.sv"/>
+        <Attr Name="ImportTime" Val="1683669346"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_m_decoder.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../AES_RISC/cv32e40x_core/cv32e40x_m_decoder.sv"/>
+        <Attr Name="ImportTime" Val="1683919870"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_mpu.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../AES_RISC/cv32e40x_core/cv32e40x_mpu.sv"/>
+        <Attr Name="ImportTime" Val="1683669347"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_mult.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../AES_RISC/cv32e40x_core/cv32e40x_mult.sv"/>
+        <Attr Name="ImportTime" Val="1683669343"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_pc_target.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../AES_RISC/cv32e40x_core/cv32e40x_pc_target.sv"/>
+        <Attr Name="ImportTime" Val="1683669353"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_pma.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../AES_RISC/cv32e40x_core/cv32e40x_pma.sv"/>
+        <Attr Name="ImportTime" Val="1683669345"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_prefetch_unit.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../AES_RISC/cv32e40x_core/cv32e40x_prefetch_unit.sv"/>
+        <Attr Name="ImportTime" Val="1683669350"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_prefetcher.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../AES_RISC/cv32e40x_core/cv32e40x_prefetcher.sv"/>
+        <Attr Name="ImportTime" Val="1683669349"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_register_file.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../AES_RISC/cv32e40x_core/cv32e40x_register_file.sv"/>
+        <Attr Name="ImportTime" Val="1683669355"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_register_file_wrapper.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../AES_RISC/cv32e40x_core/cv32e40x_register_file_wrapper.sv"/>
+        <Attr Name="ImportTime" Val="1683669352"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_sequencer.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../AES_RISC/cv32e40x_core/cv32e40x_sequencer.sv"/>
+        <Attr Name="ImportTime" Val="1683669352"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_sim_clock_gate.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../AES_RISC/cv32e40x_core/cv32e40x_sim_clock_gate.sv"/>
+        <Attr Name="ImportTime" Val="1684092801"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_sleep_unit.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../AES_RISC/cv32e40x_core/cv32e40x_sleep_unit.sv"/>
+        <Attr Name="ImportTime" Val="1683669356"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_wb_stage.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../AES_RISC/cv32e40x_core/cv32e40x_wb_stage.sv"/>
+        <Attr Name="ImportTime" Val="1683669356"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_wpt.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../AES_RISC/cv32e40x_core/cv32e40x_wpt.sv"/>
+        <Attr Name="ImportTime" Val="1683669359"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/AES_RISC/top/cv32e40x_wrapper.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../AES_RISC/top/cv32e40x_wrapper.sv"/>
+        <Attr Name="ImportTime" Val="1685368087"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_write_buffer.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../AES_RISC/cv32e40x_core/cv32e40x_write_buffer.sv"/>
+        <Attr Name="ImportTime" Val="1683669361"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/AES_RISC/parameters.vh">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../aes_risc/parameters.vh"/>
+        <Attr Name="ImportTime" Val="1692138230"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/top/dp_ram_1.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../aes_risc/top/dp_ram_1.sv"/>
+        <Attr Name="ImportTime" Val="1692046029"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/top/dp_ram_2.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../aes_risc/top/dp_ram_2.sv"/>
+        <Attr Name="ImportTime" Val="1692046086"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/top/dp_ram_3.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../aes_risc/top/dp_ram_3.sv"/>
+        <Attr Name="ImportTime" Val="1692046093"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/top/dp_ram_4.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../aes_risc/top/dp_ram_4.sv"/>
+        <Attr Name="ImportTime" Val="1692046101"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/AES_RISC/cv32e40x_core/if_c_obi.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../AES_RISC/cv32e40x_core/if_c_obi.sv"/>
+        <Attr Name="ImportTime" Val="1683669361"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/AES_RISC/cv32e40x_core/if_xif.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../AES_RISC/cv32e40x_core/if_xif.sv"/>
+        <Attr Name="ImportTime" Val="1683669204"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/top/RISC_AES.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../RISC_Preemption/RISC_Preemption.srcs/sources_1/imports/risc_hdl/top/RISC_AES.v"/>
+        <Attr Name="ImportTime" Val="1691956009"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="RISC_BENCHMARK_IP"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/new/new_pins.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../AES_RISC/AES_RISC.srcs/constrs_1/new/new_pins.xdc"/>
+        <Attr Name="ImportTime" Val="1692905316"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/constrs_1/new/pblock.xdc">
+      <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../AES_RISC/AES_RISC.srcs/constrs_1/new/pblock.xdc"/>
+        <Attr Name="ImportTime" Val="1692499329"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Flow_AreaOptimized_high" Flow="Vivado Synthesis 2018">
+      <Desc>Performs general area optimizations including changing the threshold for control set optimizations, forcing ternary adder implementation, applying lower thresholds for use of carry chain in comparators and also area optimized mux optimizations.</Desc>
+    </StratHandle>
+    <Step Id="synth_design">
+      <Option Id="Directive">0</Option>
+      <Option Id="ControlSetOptThreshold">1</Option>
+      <Option Id="FlattenHierarchy">1</Option>
+      <Option Id="KeepEquivalentRegisters">1</Option>
+    </Step>
+  </Strategy>
+</GenRun>

@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;risc_aes_ctr/src/FAR_ARRAY&apos; to &apos;FAR_ARRAY.h&apos;" description="Rename resource &apos;FAR_ARRAY&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/FAR_ARRAY" name="FAR_ARRAY.h" stamp="1692474343154" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;risc_aes_ctr/src/FAR_ARRAY.h&apos; to &apos;FAR_Table.h&apos;" description="Rename resource &apos;FAR_ARRAY.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/FAR_ARRAY.h" name="FAR_Table.h" stamp="1692486669336" updateReferences="true"/>
+</session>

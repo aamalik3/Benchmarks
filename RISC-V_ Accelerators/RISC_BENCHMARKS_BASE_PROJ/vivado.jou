@@ -1,0 +1,15 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Sun Jan  7 14:01:41 2024
+# Process ID: 53352
+# Current directory: C:/Users/aamalik3/Desktop/ICAP_Readback/Benchmarks/RISC_BENCHMARKS_BASE_PROJ
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent20796 C:\Users\aamalik3\Desktop\ICAP_Readback\Benchmarks\RISC_BENCHMARKS_BASE_PROJ\RISC_BENCHMARKS_BASE_PROJ.xpr
+# Log file: C:/Users/aamalik3/Desktop/ICAP_Readback/Benchmarks/RISC_BENCHMARKS_BASE_PROJ/vivado.log
+# Journal file: C:/Users/aamalik3/Desktop/ICAP_Readback/Benchmarks/RISC_BENCHMARKS_BASE_PROJ\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/aamalik3/Desktop/ICAP_Readback/Benchmarks/RISC_BENCHMARKS_BASE_PROJ/RISC_BENCHMARKS_BASE_PROJ.xpr
+update_compile_order -fileset sources_1
+open_run synth_1 -name synth_1

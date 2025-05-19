@@ -1,0 +1,17 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Wed Jan  3 16:42:52 2024
+# Process ID: 75840
+# Current directory: C:/Users/aamalik3/Desktop/ICAP_Readback/Benchmarks/RISC_RTL_Project
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent76980 C:\Users\aamalik3\Desktop\ICAP_Readback\Benchmarks\RISC_RTL_Project\RISC_RTL_Project.xpr
+# Log file: C:/Users/aamalik3/Desktop/ICAP_Readback/Benchmarks/RISC_RTL_Project/vivado.log
+# Journal file: C:/Users/aamalik3/Desktop/ICAP_Readback/Benchmarks/RISC_RTL_Project\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/aamalik3/Desktop/ICAP_Readback/Benchmarks/RISC_RTL_Project/RISC_RTL_Project.xpr
+update_compile_order -fileset sources_1
+pwd
+synth_design -mode out_of_context -top RISC_BENCHMARK_IP
+write_checkpoint -force ../Checkpoints/sha256.dcp

@@ -1,0 +1,26 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Thu Feb 29 12:25:23 2024
+# Process ID: 31708
+# Current directory: C:/Projects/Undergrad_Research/Task2_New/OpenNoc/OpenNoc-master/Imp/Vivado
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent26848 C:\Projects\Undergrad_Research\Task2_New\OpenNoc\OpenNoc-master\Imp\Vivado\openNocChar.xpr
+# Log file: C:/Projects/Undergrad_Research/Task2_New/OpenNoc/OpenNoc-master/Imp/Vivado/vivado.log
+# Journal file: C:/Projects/Undergrad_Research/Task2_New/OpenNoc/OpenNoc-master/Imp/Vivado\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Projects/Undergrad_Research/Task2_New/OpenNoc/OpenNoc-master/Imp/Vivado/openNocChar.xpr
+INFO: [Project 1-313] Project file moved from 'E:/Research/OpenNoc/Imp/Vivado' since last save.
+Scanning sources...
+Finished scanning sources
+WARNING: [filemgmt 56-2] IP Repository Path: Could not find the directory 'C:/Projects/Undergrad_Research/Task2_New/OpenNoc/OpenNoc-master/src/Verilog/VivadoIPs/openNoc', nor could it be found using path 'E:/Research/OpenNoc/src/Verilog/VivadoIPs/openNoc'.
+WARNING: [filemgmt 56-2] IPUserFilesDir: Could not find the directory 'C:/Projects/Undergrad_Research/Task2_New/OpenNoc/OpenNoc-master/Imp/Vivado/openNocChar.ip_user_files', nor could it be found using path 'E:/Research/OpenNoc/Imp/Vivado/openNocChar.ip_user_files'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'c:/Projects/Undergrad_Research/Task2_New/OpenNoc/OpenNoc-master/src/Verilog/VivadoIPs/openNoc'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.2/data/ip'.
+open_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 849.488 ; gain = 96.633
+update_compile_order -fileset sources_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Feb 29 12:45:43 2024...

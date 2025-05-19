@@ -1,0 +1,61 @@
+15:45:09 **** Build of configuration Release for project benchmark ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/aes.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O2 -c -fmessage-length=0 -MT"src/aes.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../benchmark_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/aes.d" -MT"src/aes.o" -o "src/aes.o" "../src/aes.c"
+'Finished building: ../src/aes.c'
+' '
+'Building file: ../src/hmac.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O2 -c -fmessage-length=0 -MT"src/hmac.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../benchmark_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/hmac.d" -MT"src/hmac.o" -o "src/hmac.o" "../src/hmac.c"
+'Finished building: ../src/hmac.c'
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O2 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../benchmark_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+In file included from ../src/main.c:74:0:
+../../benchmark_bsp/ps7_cortexa9_0/include/xtime_l.h:89:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building file: ../src/pl.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O2 -c -fmessage-length=0 -MT"src/pl.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../benchmark_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/pl.d" -MT"src/pl.o" -o "src/pl.o" "../src/pl.c"
+In file included from ../src/pl.c:268:0:
+../../benchmark_bsp/ps7_cortexa9_0/include/xtime_l.h:89:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+'Finished building: ../src/pl.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O2 -c -fmessage-length=0 -MT"src/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../benchmark_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building file: ../src/sd.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O2 -c -fmessage-length=0 -MT"src/sd.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../benchmark_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sd.d" -MT"src/sd.o" -o "src/sd.o" "../src/sd.c"
+'Finished building: ../src/sd.c'
+' '
+'Building file: ../src/sha256.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O2 -c -fmessage-length=0 -MT"src/sha256.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../benchmark_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sha256.d" -MT"src/sha256.o" -o "src/sha256.o" "../src/sha256.c"
+'Finished building: ../src/sha256.c'
+' '
+'Building target: benchmark.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../benchmark_bsp/ps7_cortexa9_0/lib -o "benchmark.elf"  ./src/aes.o ./src/hmac.o ./src/main.o ./src/pl.o ./src/platform.o ./src/sd.o ./src/sha256.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxilffs,-lxil,-lgcc,-lc,--end-group
+'Finished building target: benchmark.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size benchmark.elf  |tee "benchmark.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 127256	  10520	 274640	 412416	  64b00	benchmark.elf
+'Finished building: benchmark.elf.size'
+' '
+
+15:45:11 Build Finished (took 2s.587ms)
+

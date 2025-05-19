@@ -1,0 +1,100 @@
+# //  Questa Sim-64
+# //  Version 2022.3 win64 Jul 18 2022
+# //
+# //  Copyright 1991-2022 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# do {testbench_simulate.do}
+# vsim -lib xil_defaultlib testbench_opt 
+# Start time: 16:24:07 on Aug 14,2023
+# Loading work.testbench(fast)
+# Loading sv_std.std
+# Loading work.Z_AES(fast)
+# Loading work.clk_wiz_0(fast)
+# Loading work.clk_wiz_0_clk_wiz_0_clk_wiz(fast)
+# Loading unisims_ver.BUFG(fast)
+# Loading unisims_ver.IBUF(fast)
+# Loading unisims_ver.MMCME2_ADV(fast)
+# Loading unisims_ver.LUT1(fast)
+# Loading work.ila_1(fast)
+# Loading work.cv32e40x_wrapper(fast)
+# Loading work.cv32e40x_pkg(fast)
+# Loading work.if_xif(fast__1)
+# Loading work.cv32e40x_core(fast)
+# Loading work.if_c_obi(fast__1)
+# Loading work.if_c_obi(fast__2)
+# Loading work.cv32e40x_sleep_unit(fast)
+# Loading work.cv32e40x_clock_gate(fast)
+# Loading work.cv32e40x_if_stage(fast)
+# Loading work.cv32e40x_prefetch_unit(fast)
+# Loading work.cv32e40x_prefetcher(fast)
+# Loading work.cv32e40x_alignment_buffer(fast)
+# Loading work.cv32e40x_mpu(fast)
+# Loading work.cv32e40x_pma(fast)
+# Loading work.cv32e40x_instr_obi_interface(fast)
+# Loading work.cv32e40x_compressed_decoder(fast)
+# Loading work.cv32e40x_sequencer(fast)
+# Loading work.cv32e40x_id_stage(fast)
+# Loading work.cv32e40x_pc_target(fast)
+# Loading work.cv32e40x_decoder(fast)
+# Loading work.cv32e40x_i_decoder(fast)
+# Loading work.cv32e40x_m_decoder(fast)
+# Loading work.cv32e40x_ex_stage(fast)
+# Loading work.cv32e40x_alu(fast)
+# Loading work.cv32e40x_ff_one(fast)
+# Loading work.cv32e40x_alu_b_cpop(fast)
+# Loading work.cv32e40x_div(fast)
+# Loading work.cv32e40x_mult(fast)
+# Loading work.cv32e40x_load_store_unit(fast)
+# Loading work.cv32e40x_wpt(fast)
+# Loading work.cv32e40x_mpu(fast__1)
+# Loading work.cv32e40x_lsu_response_filter(fast)
+# Loading work.cv32e40x_write_buffer(fast)
+# Loading work.cv32e40x_data_obi_interface(fast)
+# Loading work.cv32e40x_wb_stage(fast)
+# Loading work.cv32e40x_cs_registers(fast)
+# Loading work.cv32e40x_csr(fast)
+# Loading work.cv32e40x_csr(fast__1)
+# Loading work.cv32e40x_csr(fast__2)
+# Loading work.cv32e40x_csr(fast__3)
+# Loading work.cv32e40x_debug_triggers(fast)
+# Loading work.cv32e40x_csr(fast__4)
+# Loading work.cv32e40x_controller(fast)
+# Loading work.cv32e40x_controller_fsm(fast)
+# Loading work.cv32e40x_controller_bypass(fast)
+# Loading work.cv32e40x_int_controller(fast)
+# Loading work.cv32e40x_register_file_wrapper(fast)
+# Loading work.cv32e40x_register_file(fast)
+# Loading work.dp_ram_1(fast)
+# Loading work.dp_ram_2(fast)
+# Loading work.dp_ram_3(fast)
+# Loading work.dp_ram_4(fast)
+# Loading work.glbl(fast)
+# 1
+# 1
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Warning: (vsim-PLI-3407) Too many data words read on line 131073 of file "C:/Users/aamalik3/Desktop/memory_dump_my_aes_1.hex". (Current address [131072], address range [0:131071])    : ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/top/dp_ram_1.sv(29)
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/Z_AES/cv32e40x_wrapper_i/dp_ram_1
+# ** Warning: (vsim-PLI-3407) Too many data words read on line 131073 of file "C:/Users/aamalik3/Desktop/memory_dump_my_aes_2.hex". (Current address [131072], address range [0:131071])    : ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/top/dp_ram_2.sv(29)
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/Z_AES/cv32e40x_wrapper_i/dp_ram_2
+# ** Warning: (vsim-PLI-3407) Too many data words read on line 131073 of file "C:/Users/aamalik3/Desktop/memory_dump_my_aes_3.hex". (Current address [131072], address range [0:131071])    : ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/top/dp_ram_3.sv(29)
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/Z_AES/cv32e40x_wrapper_i/dp_ram_3
+# ** Warning: (vsim-PLI-3407) Too many data words read on line 131073 of file "C:/Users/aamalik3/Desktop/memory_dump_my_aes_4.hex". (Current address [131072], address range [0:131071])    : ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/top/dp_ram_4.sv(29)
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/Z_AES/cv32e40x_wrapper_i/dp_ram_4
+run
+force -freeze sim:/glbl/GSR 1'h1 0
+force -freeze sim:/glbl/GSR 1'h0 0
+run
+quit -sim
+# End time: 16:25:29 on Aug 14,2023, Elapsed time: 0:01:22
+# Errors: 0, Warnings: 4

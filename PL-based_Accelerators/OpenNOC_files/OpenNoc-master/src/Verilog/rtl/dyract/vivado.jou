@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Thu Feb 29 12:28:13 2024
+# Process ID: 26948
+# Current directory: C:/Projects/Undergrad_Research/Task2_New/OpenNoc/OpenNoc-master/src/Verilog/rtl/dyract
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent25828 C:\Projects\Undergrad_Research\Task2_New\OpenNoc\OpenNoc-master\src\Verilog\rtl\dyract\dyract.xpr
+# Log file: C:/Projects/Undergrad_Research/Task2_New/OpenNoc/OpenNoc-master/src/Verilog/rtl/dyract/vivado.log
+# Journal file: C:/Projects/Undergrad_Research/Task2_New/OpenNoc/OpenNoc-master/src/Verilog/rtl/dyract\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project -read_only C:/Projects/Undergrad_Research/Task2_New/OpenNoc/OpenNoc-master/src/Verilog/rtl/dyract/dyract.xpr
+update_compile_order -fileset sources_1

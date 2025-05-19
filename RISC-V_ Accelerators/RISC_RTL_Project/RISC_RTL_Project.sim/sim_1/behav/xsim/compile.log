@@ -1,0 +1,6 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/aamalik3/Desktop/ICAP_Readback/Benchmarks/RISC_RTL_Project/RISC_RTL_Project.srcs/sim_1/imports/AES_RISC.sim/cv32e40x_tb_wrapper_backup.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cv32e40x_tb_wrapper
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/aamalik3/Desktop/ICAP_Readback/Benchmarks/RISC_RTL_Project/RISC_RTL_Project.srcs/sim_1/imports/AES_RISC.sim/dp_ram.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module dp_ram
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/aamalik3/Desktop/ICAP_Readback/Benchmarks/RISC_RTL_Project/RISC_RTL_Project.srcs/sim_1/imports/AES_RISC.sim/tb_top.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_top

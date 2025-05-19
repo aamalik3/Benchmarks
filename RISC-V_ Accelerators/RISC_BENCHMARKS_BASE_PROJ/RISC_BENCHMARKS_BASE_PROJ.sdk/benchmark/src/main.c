@@ -1,0 +1,639 @@
+/******************************************************************************
+*
+* Copyright (C) 2009 - 2014 Xilinx, Inc.  All rights reserved.
+*
+* Permission is hereby granted, free of charge, to any person obtaining a copy
+* of this software and associated documentation files (the "Software"), to deal
+* in the Software without restriction, including without limitation the rights
+* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+* copies of the Software, and to permit persons to whom the Software is
+* furnished to do so, subject to the following conditions:
+*
+* The above copyright notice and this permission notice shall be included in
+* all copies or substantial portions of the Software.
+*
+* Use of the Software is limited solely to applications:
+* (a) running on a Xilinx device, or
+* (b) that interact with a Xilinx device through a bus or interconnect.
+*
+* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+* XILINX  BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+* WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF
+* OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+* SOFTWARE.
+*
+* Except as contained in this notice, the name of the Xilinx shall not be used
+* in advertising or otherwise to promote the sale, use or other dealings in
+* this Software without prior written authorization from Xilinx.
+*
+******************************************************************************/
+
+/*
+ * helloworld.c: simple test application
+ *
+ * This application configures UART 16550 to baud rate 9600.
+ * PS7 UART (Zynq) is not initialized by this application, since
+ * bootrom/bsp configures it to baud rate 115200
+ *
+ * ------------------------------------------------
+ * | UART TYPE   BAUD RATE                        |
+ * ------------------------------------------------
+ *   uartns550   9600
+ *   uartlite    Configurable only in HW design
+ *   ps7_uart    115200 (configured by bootrom/bsp)
+ */
+
+#include "main.h"
+#include <stdio.h>
+#include <math.h>
+#include <string.h>
+#include <stdint.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#include <xil_types.h>
+#include <xil_assert.h>
+#include <xil_io.h>
+#include <xparameters.h>
+
+#include "aes.h"
+#include "hmac.h"
+#include "platform.h"
+#include "xgpio.h"
+#include "xil_printf.h"
+#include "xil_cache.h"
+#include "xil_cache_l.h"
+#include "xdevcfg.h"
+#include "sleep.h"
+#include "ff.h"
+#include "frame.h"
+#include "sd.h"
+#include "pl.h"
+#include "pcap_frameread.h"
+#include "xtime_l.h"
+//#include "FAR_Table.h"
+#include "FAR_Table_2.h"
+
+XGpio GSR_gpio;
+XGpio RISC_gpio;
+struct AES_ctx ctx;
+u8  digest  [Digest_Size];
+u8  digest_b[Digest_Size];
+u32 file_size_words;
+static FATFS fatfs;
+/************************** Function Prototypes ******************************/
+int clockenable (u32 PL_CLK_ADDR);
+int clockdisable(u32 PL_CLK_ADDR);
+int TriggerGSR 	();
+int SD_to_DDR   (unsigned name);
+int LOAD2DDR    (const char *filename, uint32_t LOCATION);
+void BitFlip 	(void);
+void Read_GPIOs (void);
+void print_hex  (uint8_t* str, size_t len);
+void print_hex32(uint32_t* str, size_t len);
+/************************** Function Prototypes ******************************/
+
+int SD_Init()
+{
+	FRESULT rc;
+	rc = f_mount(&fatfs, "", 0);
+	if (rc) {
+		xil_printf(" ERROR : f_mount returned %d\r\n", rc);
+		return XST_FAILURE;
+	}
+
+	return XST_SUCCESS;
+}
+void delay(void)
+{
+	for (int d=0; d<=DELAY_DURATION;d++);
+}
+int TriggerGSR (void)
+{
+	xil_printf("Triggering GSR:");
+	XGpio_DiscreteWrite		(&GSR_gpio, 1, 0x1);
+	delay();
+	XGpio_DiscreteWrite		(&GSR_gpio, 1, 0x0);
+	xil_printf("Complete\n");
+	return XST_SUCCESS;
+}
+
+int clockenable (u32 PL_CLK_ADDR)
+{
+	Xil_Out32(0xF8000008, 0xDF0D); 	//Unlock the Slice Register
+	Xil_Out32(PL_CLK_ADDR, 0);		//XDCFG_CTRL_OFFSET Register UG585 Pg 691
+	Xil_Out32(0xF8000004, 0x767B);	//Lock the Slice Register
+	xil_printf("\nStarting Clock ");
+	return XST_SUCCESS;
+}
+int clockdisable(u32 PL_CLK_ADDR)
+{
+	Xil_Out32(0xF8000008, 0xDF0D);
+	Xil_Out32(PL_CLK_ADDR, 1);
+	Xil_Out32(0xF8000004, 0x767B);
+	xil_printf("\nStopping Clock\n");
+	return XST_SUCCESS;
+}
+
+void Read_GPIOs (void)
+{
+	xil_printf(" %08x\n",XGpio_DiscreteRead		(&RISC_gpio, 1));
+}
+#ifndef BYPASS_SECURITY
+void BitFlip (void){
+
+	 ctxbuf[ 17]=ctxbuf[ 17] & 0xDF ;
+	 ctxbuf[ 57]=ctxbuf[ 57] & 0xDF ;
+	 ctxbuf[ 97]=ctxbuf[ 97] & 0xDF ;
+	 ctxbuf[137]=ctxbuf[137] & 0xDF ;
+	 ctxbuf[177]=ctxbuf[177] & 0xDF ;
+	 ctxbuf[221]=ctxbuf[221] & 0xDF ;
+	 ctxbuf[261]=ctxbuf[261] & 0xDF ;
+	 ctxbuf[301]=ctxbuf[301] & 0xDF ;
+	 ctxbuf[341]=ctxbuf[341] & 0xDF ;
+	 ctxbuf[381]=ctxbuf[381] & 0xDF ;
+
+
+/*	xil_printf ("%x -->",ctxbuf[ 17]); 		 ctxbuf[ 17]=ctxbuf[ 17] & 0xDF ;		xil_printf ("%x\n",ctxbuf[ 17]);
+	xil_printf ("%x -->",ctxbuf[ 57]); 		 ctxbuf[ 57]=ctxbuf[ 57] & 0xDF ;		xil_printf ("%x\n",ctxbuf[ 57]);
+	xil_printf ("%x -->",ctxbuf[ 97]); 		 ctxbuf[ 97]=ctxbuf[ 97] & 0xDF ;		xil_printf ("%x\n",ctxbuf[ 97]);
+	xil_printf ("%x -->",ctxbuf[137]); 		 ctxbuf[137]=ctxbuf[137] & 0xDF ;		xil_printf ("%x\n",ctxbuf[137]);
+	xil_printf ("%x -->",ctxbuf[177]); 		 ctxbuf[177]=ctxbuf[177] & 0xDF ;		xil_printf ("%x\n",ctxbuf[177]);
+	xil_printf ("%x -->",ctxbuf[221]); 		 ctxbuf[221]=ctxbuf[221] & 0xDF ;		xil_printf ("%x\n",ctxbuf[221]);
+	xil_printf ("%x -->",ctxbuf[261]); 		 ctxbuf[261]=ctxbuf[261] & 0xDF ;		xil_printf ("%x\n",ctxbuf[261]);
+	xil_printf ("%x -->",ctxbuf[301]); 		 ctxbuf[301]=ctxbuf[301] & 0xDF ;		xil_printf ("%x\n",ctxbuf[301]);
+	xil_printf ("%x -->",ctxbuf[341]); 		 ctxbuf[341]=ctxbuf[341] & 0xDF ;		xil_printf ("%x\n",ctxbuf[341]);
+	xil_printf ("%x -->",ctxbuf[381]); 		 ctxbuf[381]=ctxbuf[381] & 0xDF ;		xil_printf ("%x\n",ctxbuf[381]);*/
+}
+#endif
+int SD_TransferPartial(char *FileName, u32 DestinationAddress, u32 ByteLength)
+{
+	FIL fil;
+	FRESULT rc;
+	UINT br;
+
+	rc = f_open(&fil, FileName, FA_READ);
+	if (rc) {
+		xil_printf(" ERROR : f_open returned %d\r\n", rc);
+		return XST_FAILURE;
+	}
+
+	rc = f_lseek(&fil, 0);
+	if (rc) {
+		xil_printf(" ERROR : f_lseek returned %d\r\n", rc);
+		return XST_FAILURE;
+	}
+
+	rc = f_read(&fil, (void*)DestinationAddress, ByteLength, &br);
+	if (rc) {
+		xil_printf(" ERROR : f_read returned %d\r\n", rc);
+		return XST_FAILURE;
+	}
+
+	rc = f_close(&fil);
+	if (rc) {
+		xil_printf(" ERROR : f_close returned %d\r\n", rc);
+		return XST_FAILURE;
+	}
+
+	return XST_SUCCESS;
+}
+
+int SD_to_DDR (unsigned name)
+{
+
+	u32 Status;
+	Status = sdInit();
+	if (Status != XST_SUCCESS) {
+		xil_printf("Could not mount the SD Card\r\n");
+		return XST_FAILURE;
+	}
+
+	Status = name ? sdOpenFile(FILE_M) : sdOpenFile(FILE_L); //6916 Size
+	xil_printf("Open File on SD Card -- %s\r\n",Status == XST_SUCCESS ? "Success": "Failed");
+	Status = sdLoadToMemory(0, DDR_MEMORY_LOCATION, GetFileSize());
+	xil_printf("Loading file to DDR Memory --%s\r\n",Status == XST_SUCCESS ? "Success": "Failed");
+	file_size_words = GetFileSize() / 4;
+	xil_printf("Filesize (in words)-- %d\r\n",file_size_words);
+	xil_printf("BitStream Loading -- %s\r\n",Status == XST_SUCCESS ? "Success": "Failed");
+	return XST_SUCCESS;
+}
+
+int LOAD2DDR (const char *filename, uint32_t LOCATION)
+{
+
+	u32 Status;
+	Status = sdInit();
+	if (Status != XST_SUCCESS) {
+		xil_printf("Could not mount the SD Card\r\n");
+		return XST_FAILURE;
+	}
+
+	Status = sdOpenFile(filename);
+	xil_printf("Open File on SD Card 	 -- %s\r\n",Status == XST_SUCCESS ? "Success": "Failed");
+
+	Status = sdLoadToMemory(0, LOCATION, GetFileSize());
+	xil_printf("Load file to DDR Mem  -- %s\r\n",Status == XST_SUCCESS ? "Success": "Failed");
+	return Status;
+}
+
+void print_hex(uint8_t* str, size_t len)
+{
+    size_t i,j;
+    for (j = 0; j < len; j+=16) {
+        for (i = 0; i < 16; i++) {
+        	xil_printf("%02x", str[i+j]);
+        }
+        xil_printf("\n");
+    }
+    xil_printf("\n");
+}
+
+void print_hex32(uint32_t* str, size_t len){
+    for (size_t j = 0; j < len; j++) {
+        	xil_printf("\n%3d : %08x",j, str[j]);
+    }
+    xil_printf("\n");
+}
+/*
+
+// Function to enable the cycle counter
+void enable_cycle_counter(void) {
+    // Enable the Performance Monitoring Unit (PMU) and the cycle counter
+    asm volatile ("MCR p15, 0, %0, C9, C14, 0\n\t" :: "r"(1));
+    // Reset the cycle counter to 0
+    asm volatile ("MCR p15, 0, %0, C9, C12, 1\n\t" :: "r"(0));
+}
+
+// Function to read the cycle counter
+uint32_t read_cycle_counter(void) {
+    uint32_t value;
+    asm volatile ("MRC p15, 0, %0, C9, C13, 0\n\t" : "=r"(value));
+    return value;
+}
+*/
+
+int main()
+{
+
+	Xil_DCacheDisable();
+    init_platform();
+
+#ifndef BYPASS_SECURITY
+    uint8_t iv      [16]    = { 0xf0, 0xf1, 0xf2, 0xf3, 0xf4, 0xf5, 0xf6, 0xf7, 0xf8, 0xf9, 0xfa, 0xfb, 0xfc, 0xfd, 0xfe, 0xff };
+    uint8_t AES_Key [16]    = { 0x2b, 0x7e, 0x15, 0x16, 0x28, 0xae, 0xd2, 0xa6, 0xab, 0xf7, 0x15, 0x88, 0x09, 0xcf, 0x4f, 0x3c };
+    uint8_t HMAC_Key[16]    = { 0xAD, 0xF6, 0xED, 0x2F, 0x47, 0xE6, 0xC3, 0x76, 0xCF, 0x8A, 0xC8, 0x73, 0xC6, 0xCE, 0x9B, 0x59 };
+    size_t  key_len = (sizeof(HMAC_Key) / sizeof(HMAC_Key[0]));
+#endif
+
+//    print_hex (i_o,Size);
+
+
+
+    u32 Status;
+    xil_printf("Starting Program\r\n");
+    printf("FAR Array Elements %d \n", elements);
+	Status = XGpio_Initialize(&GSR_gpio , XPAR_GPIO_0_DEVICE_ID);
+
+	if (Status != XST_SUCCESS) {
+		xil_printf("GSR_GPIO Initialization Failed\r\n");
+		return XST_FAILURE;
+	}
+	XGpio_SetDataDirection	(&GSR_gpio, 1, 0);
+//	Status = XGpio_Initialize(&RISC_gpio, XPAR_RISC_IP_CHECK_DEVICE_ID);
+	Status = XGpio_Initialize(&RISC_gpio, XPAR_GPIO_1_DEVICE_ID);
+
+	if (Status != XST_SUCCESS) {
+		xil_printf("RISC_IP_CHECK_GPIO Initialization Failed\r\n");
+		return XST_FAILURE;
+
+	}
+	XGpio_SetDataDirection	(&RISC_gpio, 1, 1);
+	XGpio_SetDataDirection	(&RISC_gpio, 2, 1);
+
+	char n[5] = {};
+	/*Clear the DDR by loading Null Frame Template into DDR from SD Card*/
+	Status = LOAD2DDR(NULL_FRAME,LSB_DUMP_LOCATION);
+	xil_printf("Frame Template Loaded -- %s\r\n\r\n",Status == XST_SUCCESS ? "Success": "Failed");
+	/*Load the Frame Template into DDR from SD Card*/
+	Status = LOAD2DDR(F_TEMPLATE,LSB_DUMP_LOCATION);
+	xil_printf("Frame Template Loaded -- %s\r\n\r\n",Status == XST_SUCCESS ? "Success": "Failed");
+
+/*
+	int  percentage_o=-1;
+	for (int l=0; l<elements; l++)
+	{
+		Frame_Template(LSB_DUMP_LOCATION,FRAME_2_START*l, false);
+        float percentage_f = ((float)l / elements) * 100;
+        int percentage_n = (int)percentage_f;
+
+        if (percentage_n != percentage_o) {
+            printf("%02d%%\n", percentage_n);
+            percentage_o = percentage_n;
+		}
+	}
+*/
+
+	  XTime gbl_time_before_test;
+	  XTime *p_gbl_time_before_test = &gbl_time_before_test;
+	  XTime gbl_time_after_test;
+	  XTime *p_gbl_time_after_test = &gbl_time_after_test;
+
+	  while (1)
+	{
+		whilestart:
+		xil_printf("\n--------------------------\r") ;
+		xil_printf("\n(0) : Exit    Program		\r") ;//48
+		xil_printf("\n(1) : Read    FAR 		\r") ;//49
+		xil_printf("\n(2) : Load    Design-1 	\r") ;//50
+		xil_printf("\n(3) : Load    Design-2* 	\r") ;//51
+		xil_printf("\n(4) : Save    State		\r") ;//52
+		xil_printf("\n(5) : Restore State 		\r") ;//53
+		xil_printf("\n(6) : Pause   Clock 		\r") ;//54
+		xil_printf("\n(7) : Resume  Clock 		\r") ;//55
+		xil_printf("\n(8) : Read    IP  		\r") ;//56
+		xil_printf("\n(A) : Print   Menu 		\r") ;//65
+		xil_printf("\n(B) : Apply   GSR 		\r") ;//66
+		xil_printf("\n--------------------------\r") ;
+
+		n[5] = inbyte();
+
+		xil_printf("\n:Selected %d\r\n",n[5]);
+		switch (n[5])
+		{
+			case 48: goto exit_while;
+			case 49:
+				{
+					u32 FAR =0x0U;
+					xil_printf("Enter Frame Address to Read From:\r\n");
+					for (int i=0;i<4;i++)
+					{
+						n[i] = inbyte();
+					}
+					FAR = ((n[0] & 0xFF) << 24) + ((n[1] & 0xFF) << 16) + ((n[2] & 0xFF) << 8) + (n[3] & 0xFF);
+					xil_printf("\n1:Reading Frame from FAR : %08x \r\n",FAR);
+					read(FAR,true);
+					break;
+				}
+			case 50 :
+				{
+//					Status =clockdisable(PL_CLK1);
+					xil_printf("\n:Selected Design 1\r\n");
+					SD_to_DDR(0x01);
+//					Status = plLoadBitstream(DDR_MEMORY_LOCATION,FILE_M_SIZE);//msb
+					Status = plLoadBitstream(DDR_MEMORY_LOCATION,file_size_words);//msb
+					xil_printf("MSB BitStream Loaded -- %s\r\n\r\n",Status == XST_SUCCESS ? "Success": "Failed");
+//					Status =clockenable(PL_CLK1);
+					break;
+				}
+			case 51 :
+				{
+//					Status =clockdisable(PL_CLK1);
+					xil_printf("\n:Selected Design 2\r\n");
+					SD_to_DDR(0x00);
+//					Status =  plLoadBitstream(DDR_MEMORY_LOCATION,FILE_L_SIZE);//lsb
+					Status =  plLoadBitstream(DDR_MEMORY_LOCATION,file_size_words);//lsb
+					xil_printf("LSB BitStream Loaded -- %s\r\n\r\n",Status == XST_SUCCESS ? "Success": "Failed");
+//					Status =clockenable(PL_CLK1);
+					break;
+				}
+			case 52 : //CONTEXT SAVE
+				{
+			#ifndef BYPASS_SECURITY
+					u8 FRAME_ID =0x0;
+					Status =clockdisable(PL_CLK1);
+					xil_printf("\nSaving IP State @:");
+					Read_GPIOs();
+					delay ();
+
+					/*Perform AES Key Expansion*/
+					AES_init_ctx_iv(&ctx, AES_Key, iv);
+					/*HMAC Digest Array*/
+					u8 *digest_array = (u8*)malloc(Digest_Size *elements* sizeof(u8));
+
+				    XTime_GetTime(p_gbl_time_before_test);
+					for (u32 j=0; j<elements; j++)
+					{
+						/*Read 1 Frame of Data*/
+						read			(FAR_ARRAY[j],false);
+						usleep(1000);
+						Xil_Out32		((LSB_DUMP_LOCATION + 0x058+FRAME_2_START*j), FAR_ARRAY[j]); //Read from this FAR Value
+						Xil_Out32		((LSB_DUMP_LOCATION + 0x3B0+FRAME_2_START*j), FAR_ARRAY[j]); //Park the FAR Value
+						usleep(1000);
+						/*See if the Read Frame is a BRAM Frame*/
+						FRAME_ID = (((FAR_ARRAY[j])& 0x00FF0000 )>>16);
+//						BRAM_FLIP = (FRAME_ID == 0xC2) ? true:false;//3rd Byte of BRAM frames FAR addresses start from 0xC2
+						if (FRAME_ID == 0xC2){//3rd Byte of BRAM frames FAR addresses start from 0xC2
+//							print_hex (ctxbuf,Size);
+							BitFlip();
+//							print_hex (ctxbuf,Size);
+						}
+
+						/*Encrypt the Read Frame using AES-128*/
+						AES_CTR_xcrypt_buffer(&ctx, ctxbuf, Size);
+						/*Hash the Encrypted Frame using HMAC-SHA-256*/
+						hmac_sha256          (HMAC_Key, key_len, ctxbuf, Size, digest) ;
+						/*Copy the current Hash Digest for Chained Hash*/
+							for (u8 i = 0; i < Digest_Size; i++) {
+								digest_array[(j<<5)+i] = digest[i];
+							}
+//					    print_hex32 ((u32*)digest,8);
+//						print_hex (ctxbuf,Size);
+						Status = encrypted_save  (LSB_DUMP_LOCATION , (Frame_Data_Location+ FRAME_2_START*j));//70
+					}
+					/*Computing Chained Hash and saving the digest for later verification*/
+					hmac_sha256          (HMAC_Key, key_len, digest_array, Digest_Array_Size, digest_b);
+//					print_hex32 ((u32*)digest_b,8);
+
+					XTime_GetTime(p_gbl_time_after_test);
+					free(digest_array); // Free the allocated memory
+
+				    float run_time = (float) (gbl_time_after_test - gbl_time_before_test)/((float) COUNTS_PER_SECOND);
+				    printf("\nSave time = %.4f secs\r\n", run_time);
+
+
+					Status =clockenable(PL_CLK1);
+					break;
+
+			#else
+					bool BRAM_FLIP;
+					Status =clockdisable(PL_CLK1);
+
+					xil_printf("\nSaving IP State @:");
+					Read_GPIOs();
+					delay ();
+				    XTime_GetTime(p_gbl_time_before_test);
+
+					for (u32 j=0; j<elements; j++)
+					{
+						read			(FAR_ARRAY[j],false);
+						usleep(1000);
+						Xil_Out32		((LSB_DUMP_LOCATION + 0x058+FRAME_2_START*j), FAR_ARRAY[j]);
+						Xil_Out32		((LSB_DUMP_LOCATION + 0x3B0+FRAME_2_START*j), FAR_ARRAY[j]);
+						usleep(1000);
+						unsigned char FRAME_ID = (((FAR_ARRAY[j])& 0x00FF0000 )>>16);
+						BRAM_FLIP = (FRAME_ID == 0xC2) ? true:false;/*3rd Byte of BRAM frames FAR addresses start from 0xC2*/
+						Status = save_bitstream  (LSB_DUMP_LOCATION , (Frame_Data_Location+ FRAME_2_START*j), BRAM_FLIP);//70
+					}
+
+					XTime_GetTime(p_gbl_time_after_test);
+				    float run_time = (float) (gbl_time_after_test - gbl_time_before_test)/((float) COUNTS_PER_SECOND);
+				    printf("\nSave time = %.4f secs\r\n", run_time);
+
+				    for (u8 i = 0; i < Digest_Size; i++) { /*Saving the digest for later verification*/
+				    	digest_b[i] = digest[i];
+				    }
+
+					Status =clockenable(PL_CLK1);
+					break;
+
+
+
+			#endif
+				}
+			case 53 : //CONTEXT RESTORE
+				{
+					#ifndef BYPASS_SECURITY
+						Status =clockdisable(PL_CLK1);
+							// delay ();
+						u32 data_in=0;
+
+						/*Perform AES Key Expansion*/
+						AES_init_ctx_iv(&ctx, AES_Key, iv);
+						u8 *digest_array = (u8*)malloc(Digest_Size *elements* sizeof(u8));
+
+						XTime_GetTime(p_gbl_time_before_test);
+
+
+							/*Read and Verify the Integrity of the Frames stored in DRAM*/
+							for (u32 k=0; k<elements; k++){
+								for (u8 i=0; i<104; i++){
+									u32    x   = i<<2;
+									data_in    = Xil_In32 (LSB_DUMP_LOCATION+Frame_Data_Location+FRAME_2_START*k+x);
+									ctxbuf[x  ]= data_in>>24 & 0xFF;
+									ctxbuf[x+1]= data_in>>16 & 0xFF;
+									ctxbuf[x+2]= data_in>>8  & 0xFF;
+									ctxbuf[x+3]= data_in     & 0xFF;
+								}
+								hmac_sha256          (HMAC_Key, key_len, ctxbuf, Size, digest) ;
+								for (u8 i = 0; i < Digest_Size; i++) {
+									digest_array[(k<<5)+i] = digest[i];
+								}
+							}
+								hmac_sha256 (HMAC_Key, key_len, digest_array, Digest_Array_Size, digest);
+//								print_hex32 ((u32*)digest,8);
+								free(digest_array); // Free the allocated memory
+
+								bool NOT_EQUAL = false;
+							    for (u8 i = 0; i < Digest_Size; i++) { //Compare & Verify
+							        if (digest_b[i] != digest[i]) {
+							        	NOT_EQUAL = true; // Arrays are not equal
+							        	print_hex32 ((u32*)digest_b,8);
+							        	print_hex32 ((u32*)digest  ,8);
+							            break;
+							        }
+							    }
+								if (NOT_EQUAL){
+									xil_printf("\nIntegrity Check : Failed");
+									goto whilestart;
+									break;
+								}
+								xil_printf("\nIntegrity Check : Passed");
+
+							/*Decrypt and Load the Frames to PL*/
+
+							for (u32 k=0; k<elements; k++){
+								for (u8 i=0; i<104; i++){
+									u32    x   = i<<2;
+									data_in    = Xil_In32 (LSB_DUMP_LOCATION+Frame_Data_Location+FRAME_2_START*k+x);
+									ctxbuf[x  ]= data_in>>24 & 0xFF;
+									ctxbuf[x+1]= data_in>>16 & 0xFF;
+									ctxbuf[x+2]= data_in>>8  & 0xFF;
+									ctxbuf[x+3]= data_in     & 0xFF;
+								}
+								AES_CTR_xcrypt_buffer(&ctx, ctxbuf, Size);
+								// print_hex (ctxbuf,Size);
+								for (u8 i=0; i<104; i++){
+											data_in   = ctxbuf[i*4+0]<<24 | ctxbuf[i*4+1]<<16 |ctxbuf[i*4+2]<<8|ctxbuf[i*4+3];
+											Frame [i+29] =data_in;
+								}
+
+								//Frame [22 ] = Xil_In32	(LSB_DUMP_LOCATION + 0x058 + FRAME_2_START*k); // Read FAR
+								//Frame [236] = Xil_In32	(LSB_DUMP_LOCATION + 0x3B0 + FRAME_2_START*k); // Park FAR
+								Frame [22 ] = FAR_ARRAY[k]; // Read FAR
+								Frame [236] = FAR_ARRAY[k]; // Park FAR
+								// print_hex32(Frame,TEMPLATE_SIZE);
+								for (u8 i=0; i<TEMPLATE_SIZE; i++) // Temporarily write plain data to DRAM for loading back to PL
+								{
+									Xil_Out32 (PLAIN_FRAME+(i<<2),Frame[i]);
+								}
+								Status =  plLoadBitstream(PLAIN_FRAME,TEMPLATE_SIZE);
+							}
+						XTime_GetTime(p_gbl_time_after_test);
+						float run_time = (float) (gbl_time_after_test - gbl_time_before_test)/((float) COUNTS_PER_SECOND);
+						printf("\nRestore time = %.4f secs\r\n", run_time);
+						Status =TriggerGSR 	();
+							delay ();
+						Status =clockenable(PL_CLK1);
+							xil_printf("\nResuming IP State from :");
+						Read_GPIOs();
+						break;
+
+					#else
+
+						Status =clockdisable(PL_CLK1);
+							delay ();
+						XTime_GetTime(p_gbl_time_before_test);
+							for (u32 k=0; k<elements; k++){
+								Status =  plLoadBitstream(LSB_DUMP_LOCATION+ FRAME_2_START*k,TEMPLATE_SIZE);
+							}
+						XTime_GetTime(p_gbl_time_after_test);
+						float run_time = (float) (gbl_time_after_test - gbl_time_before_test)/((float) COUNTS_PER_SECOND);
+						printf("\nRestore time = %.4f secs\r\n", run_time);
+						Status =TriggerGSR 	();
+							delay ();
+						Status =clockenable(PL_CLK1);
+							xil_printf("\nResuming IP State from :");
+						Read_GPIOs();
+						break;
+
+					#endif
+				}
+			case 54:
+			{
+				Status  =clockdisable(PL_CLK1);
+				xil_printf("-- %s\r\n",Status == XST_SUCCESS ? "Success": "Failed");
+				break;
+			}
+			case 55:
+			{
+				Status  =clockenable (PL_CLK1);
+				xil_printf("-- %s\r\n" ,Status == XST_SUCCESS ? "Success": "Failed");
+				break;
+			}
+
+			case 56 ://Read IP Value
+				{
+					xil_printf("\n<Benchmark IP Output :");
+					Read_GPIOs();
+					break;
+				}
+			case 65:
+			{
+				goto whilestart; 		 break;
+			}
+			case 66:
+			{
+				Status =TriggerGSR 	();
+				break;
+			}
+
+		}
+	}
+	exit_while:
+	xil_printf("\n:Program Ended \r");
+	cleanup_platform();
+    return XST_SUCCESS;
+}
+

@@ -1,0 +1,72 @@
+/*
+ * constants.h
+ *
+ *  Created on: Feb 6, 2023
+ *      Author: aamalik3
+ */
+
+//#define BFS			1
+//#define COREMARK      1
+//#define DHRYSTONE     1
+//#define GEMM          1
+//#define KMP           1
+//#define MERGE_SORT    1
+//#define NW            1
+//#define AES           1
+#define FALCON          1
+
+#ifdef BFS
+	#define FILE_M				"bfs_partial.bin"
+	#define FILE_L				"bfs_partial.bin"
+#elseif COREMARK
+	#define FILE_M				"coremark_partial.bin"
+	#define FILE_L				"coremark_partial.bin"
+#elseif DHRYSTONE
+	#define FILE_M				"dhrystone_partial.bin"
+	#define FILE_L				"dhrystone_partial.bin"
+#elseif GEMM
+	#define FILE_M				"gemm_partial.bin"
+	#define FILE_L				"gemm_partial.bin"
+#elseif KMP
+	#define FILE_M				"kmp_partial.bin"
+	#define FILE_L				"kmp_partial.bin"
+#elseif MERGE_SORT
+	#define FILE_M				"merge_partial.bin"
+	#define FILE_L				"merge_partial.bin"
+#elseif NW
+	#define FILE_M				"nw_partial.bin"
+	#define FILE_L				"nw_partial.bin"
+#elseif FALCON
+	#define FILE_M				"falcon512int_partial.bin"
+	#define FILE_L				"falcon512int_partial.bin"
+#elseif AES
+	#define FILE_M				"RAP.bin"
+	#define FILE_L				"RAP.bin"
+#endif
+
+#define FILE_M_SIZE			 (1481580)/4	//7446 this is size of the file (not size on disk)
+#define FILE_L_SIZE			 (1481580)/4 	//6916
+/**************************** Type Definitions *******************************/
+#define DDR_MEMORY_LOCATION 0x00200000
+#define MSB_DUMP_LOCATION 	0x00300000
+#define LSB_DUMP_LOCATION 	0x00500000
+#define FAR_1 				0x0042239F
+#define FAR_2 				0x0042231F
+//#define FRAME_2_START		0x000003AC+2+11
+//#define elements			1752-35//276-6
+#define Frame_Data_Location	0x00000074
+#define FRAME_2_START		0x000003E0
+#define TEMPLATE_SIZE		 (984)/4 	//2660
+//#define SWAP_ON		 		0x00000001
+#define F_TEMPLATE			"Frame.hex"
+
+#define DELAY_DURATION		0001000000
+#define PL_CLK0 			0xF8000178
+#define PL_CLK1 			0xF8000188
+#define PL_CLK2 			0xF8000198
+#define PL_CLK3 			0xF80001A8
+
+#define BRAM_MASK 			0xFFFDFFFF
+#define elements			(sizeof(FAR_ARRAY) / sizeof(FAR_ARRAY[0]))
+//int elements;
+/**************************** Type Definitions *******************************/

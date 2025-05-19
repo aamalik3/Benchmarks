@@ -1,0 +1,33 @@
+----------------------------------------------------------------------------------------------
+| First Step-- Synthize Design out of context (in given vivado RTL_IP Project) |
+----------------------------------------------------------------------------------------------
+	# Hash_Chain is the name of the IP that you get from internet , replace with actual name of the IP
+synth_design -mode out_of_context -top CUSTOM_IPS
+	# if you want save in the same folder, here "ctr_example" is the name of the checkpoint
+write_checkpoint -force ctr_example.dcp  # - cd to directory where you want to place the file
+
+---------------------------------------------------------------------------------------------
+| Second Step-- Incorporate the saved checkpoint in our design (in given vivado BASEPROJECT) |
+---------------------------------------------------------------------------------------------
+
+
+reset_run synth_1
+launch_runs synth_1 -jobs 30
+wait_on_run -timeout 10 synth_1
+open_run synth_1 -name synth_1
+
+# Path is assumed to be either in "ONRHandover" root folder
+update_design -cell [get_cell design_1_i/CUSTOM_IP/inst] -black_box
+
+#cd to directory where the new checkpoint is, in this example it is "ONRHandover" root Folder
+set benchmarkname "ctr_example"  
+
+read_checkpoint -cell [get_cell design_1_i/CUSTOM_IP/inst] ./$benchmarkname.dcp
+opt_design
+place_design
+route_design
+
+file mkdir $benchmarkname
+write_bitstream -force -file ./$benchmarkname/$benchmarkname.bit
+write_cfgmem -force -format BIN -interface SMAPx32 -disablebitswap -loadbit "up 0 ./$benchmarkname/${benchmarkname}_pblock_custom_ip_partial.bit" ./$benchmarkname/${benchmarkname}_partial.bin
+file delete ./$benchmarkname/${benchmarkname}.prm

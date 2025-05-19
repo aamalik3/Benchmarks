@@ -1,0 +1,27 @@
+13:53:49 **** Auto Build of configuration Debug for project Benchmark ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Benchmark_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+In file included from ../src/main.c:69:0:
+../../Benchmark_bsp/ps7_cortexa9_0/include/xtime_l.h:89:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: Benchmark.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Benchmark_bsp/ps7_cortexa9_0/lib -o "Benchmark.elf"  ./src/main.o ./src/pl.o ./src/platform.o ./src/sd.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxilffs,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Benchmark.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Benchmark.elf  |tee "Benchmark.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 114380	  10512	67120688	67245580	402160c	Benchmark.elf
+'Finished building: Benchmark.elf.size'
+' '
+
+13:53:50 Build Finished (took 883ms)
+

@@ -1,0 +1,11 @@
+===================================
+Configuration Memory information
+===================================
+File Format        BIN
+Interface          SMAPX32
+Size               2M
+Start Address      0x00000000
+End Address        0x001FFFFF
+
+Addr1         Addr2         Date                    File(s)
+0x00000000    0x00169B6B    Mar 28 14:28:42 2024    ./png_Decoder_1/png_Decoder_1_pblock_custom_ip_partial.bit

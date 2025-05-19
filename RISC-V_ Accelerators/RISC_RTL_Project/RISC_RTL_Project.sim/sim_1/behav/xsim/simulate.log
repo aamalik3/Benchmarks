@@ -1,0 +1,12 @@
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+FATAL_ERROR: Vivado Simulator kernel has discovered an exceptional condition from which it cannot recover. Process will terminate. For technical support on this issue, please open a WebCase with this project attached at http://www.xilinx.com/support.
+Time: 0 ps  Iteration: 0  Process: /testbench/Z_AES/cv32e40x_wrapper_i/cv32e40x_core_i/if_stage_i/prefetch_unit_i/alignment_buffer_i/NetRegassign166_295
+  File: C:/Users/aamalik3/Desktop/ICAP_Readback/AES_RISC/AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_alignment_buffer.sv
+
+HDL Line: C:/Users/aamalik3/Desktop/ICAP_Readback/AES_RISC/AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_alignment_buffer.sv:166
+FATAL_ERROR: Vivado Simulator kernel has discovered an exceptional condition from which it cannot recover. Process will terminate. For technical support on this issue, please open a WebCase with this project attached at http://www.xilinx.com/support.
+Time: 0 ps  Iteration: 0  Process: /testbench/Z_AES/cv32e40x_wrapper_i/cv32e40x_core_i/if_stage_i/prefetch_unit_i/alignment_buffer_i/NetRegassign166_295
+  File: C:/Users/aamalik3/Desktop/ICAP_Readback/AES_RISC/AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_alignment_buffer.sv
+
+HDL Line: C:/Users/aamalik3/Desktop/ICAP_Readback/AES_RISC/AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_alignment_buffer.sv:166

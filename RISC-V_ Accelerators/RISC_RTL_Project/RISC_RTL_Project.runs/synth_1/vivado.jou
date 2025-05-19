@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Tue Feb 27 13:27:30 2024
+# Process ID: 6508
+# Current directory: C:/Users/aamalik3/Desktop/ICAP_Readback/Benchmarks/RISC_RTL_Project/RISC_RTL_Project.runs/synth_1
+# Command line: vivado.exe -log RISC_BENCHMARK_IP.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source RISC_BENCHMARK_IP.tcl
+# Log file: C:/Users/aamalik3/Desktop/ICAP_Readback/Benchmarks/RISC_RTL_Project/RISC_RTL_Project.runs/synth_1/RISC_BENCHMARK_IP.vds
+# Journal file: C:/Users/aamalik3/Desktop/ICAP_Readback/Benchmarks/RISC_RTL_Project/RISC_RTL_Project.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source RISC_BENCHMARK_IP.tcl -notrace

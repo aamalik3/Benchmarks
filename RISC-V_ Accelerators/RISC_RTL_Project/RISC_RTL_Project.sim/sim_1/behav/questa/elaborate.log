@@ -1,0 +1,88 @@
+# do {testbench_elaborate.do}
+# QuestaSim-64 vopt 2022.3 Compiler 2022.07 Jul 18 2022
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# Start time: 16:23:47 on Aug 14,2023
+# vopt "+acc=npr" -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm -work xil_defaultlib xil_defaultlib.testbench xil_defaultlib.glbl -o testbench_opt 
+# 
+# Top level modules:
+# 	testbench
+# 	glbl
+# 
+# Analyzing design...
+# -- Loading module testbench
+# -- Loading module glbl
+# -- Loading module Z_AES
+# -- Loading module clk_wiz_0
+# -- Loading module clk_wiz_0_clk_wiz_0_clk_wiz
+# -- Loading module unisims_ver.BUFG
+# -- Loading module unisims_ver.IBUF
+# -- Loading module unisims_ver.MMCME2_ADV
+# -- Loading module unisims_ver.LUT1
+# -- Loading UDP unisims_ver.x_lut1_mux2
+# -- Loading module ila_1
+# -- Loading module cv32e40x_wrapper
+# -- Loading interface if_xif
+# -- Importing package cv32e40x_pkg
+# -- Loading module cv32e40x_core
+# -- Loading interface if_c_obi
+# -- Loading module cv32e40x_sleep_unit
+# -- Loading module cv32e40x_clock_gate
+# -- Loading module cv32e40x_if_stage
+# -- Loading module cv32e40x_prefetch_unit
+# -- Loading module cv32e40x_prefetcher
+# -- Loading module cv32e40x_alignment_buffer
+# -- Loading module cv32e40x_mpu
+# -- Loading module cv32e40x_pma
+# -- Loading module cv32e40x_instr_obi_interface
+# -- Loading module cv32e40x_compressed_decoder
+# -- Loading module cv32e40x_id_stage
+# -- Loading module cv32e40x_pc_target
+# -- Loading module cv32e40x_decoder
+# -- Loading module cv32e40x_i_decoder
+# -- Loading module cv32e40x_ex_stage
+# -- Loading module cv32e40x_alu
+# -- Loading module cv32e40x_ff_one
+# -- Loading module cv32e40x_alu_b_cpop
+# -- Loading module cv32e40x_load_store_unit
+# -- Loading module cv32e40x_lsu_response_filter
+# -- Loading module cv32e40x_write_buffer
+# -- Loading module cv32e40x_data_obi_interface
+# -- Loading module cv32e40x_wb_stage
+# -- Loading module cv32e40x_cs_registers
+# -- Loading module cv32e40x_csr
+# -- Loading module cv32e40x_debug_triggers
+# -- Loading module cv32e40x_controller
+# -- Loading module cv32e40x_controller_fsm
+# -- Loading module cv32e40x_controller_bypass
+# -- Loading module cv32e40x_register_file_wrapper
+# -- Loading module cv32e40x_register_file
+# -- Loading module dp_ram_1
+# -- Loading module dp_ram_2
+# -- Loading module dp_ram_3
+# -- Loading module dp_ram_4
+# -- Loading module cv32e40x_sequencer
+# -- Loading module cv32e40x_m_decoder
+# -- Loading module cv32e40x_div
+# -- Loading module cv32e40x_mult
+# -- Loading module cv32e40x_wpt
+# -- Loading module cv32e40x_int_controller
+# Incremental compilation check found 55 design-units (out of 65) may be reused.
+# Optimizing 10 design-units (inlining 0/67 module instances, 0/5 cell instances, 1/1 UDP instances):
+# -- Optimizing module cv32e40x_cs_registers(fast)
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_cs_registers.sv(77): (vopt-13314) Defaulting port 'id_ex_pipe_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_cs_registers.sv(81): (vopt-13314) Defaulting port 'ex_wb_pipe_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ../../../../AES_RISC.srcs/sources_1/imports/AES_RISC/cv32e40x_core/cv32e40x_cs_registers.sv(84): (vopt-13314) Defaulting port 'ctrl_fsm_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# -- Optimizing module cv32e40x_core(fast)
+# -- Optimizing module cv32e40x_wrapper(fast)
+# -- Optimizing module dp_ram_2(fast)
+# -- Optimizing module dp_ram_1(fast)
+# -- Optimizing module dp_ram_4(fast)
+# -- Optimizing module dp_ram_3(fast)
+# -- Optimizing module testbench(fast)
+# ** Warning: ../../../../AES_RISC.srcs/sim_1/new/testbench.v(26): (vopt-2685) [TFMPC] - Too few port connections for 'Z_AES'.  Expected 6, found 5.
+# ** Warning: ../../../../AES_RISC.srcs/sim_1/new/testbench.v(26): (vopt-2718) [TFMPC] - Missing connection for port 'pass'.
+# -- Optimizing module Z_AES(fast)
+# -- Optimizing module ila_1(fast)
+# Optimized design name is testbench_opt
+# End time: 16:23:48 on Aug 14,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 6

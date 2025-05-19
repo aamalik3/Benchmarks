@@ -1,0 +1,57 @@
+`timescale 1 ns / 1 ps
+
+module CUSTOM_IPS
+  (
+  
+  input         clock      ,
+  input         reset      ,
+  output        Output_1   ,      
+  output  [31:0]Output_Bus       
+   );
+
+wire reset_n;
+
+wire[17:0] Y;
+
+assign reset_n = ~reset;
+
+(* DONT_TOUCH = "yes" *)
+cnn_module 
+#(
+.In_d_W(8), 
+.In_Add_W(4), 
+.R_N_Conv(5), 
+.C_N_Conv(5), 
+.R_F_Conv(3), 
+.C_F_Conv(3), 
+.P_Conv(0), 
+.S_Conv(1), 
+.R_Pool_In(3),
+.C_Pool_In(3), 
+.R_Pool_Area(2), 
+.C_Pool_Area(2), 
+.P_Pool(0), 
+.S_Pool(1), 
+.Timeperiod(10)) 
+cnn_module (
+.clk	(clock)														,
+.rst	(reset)																,
+.clr	(1'b0)																,
+.wr		(1'b1)															,
+.en_clk						(1'b1)								,
+.en_wr						(1'b1)										,
+.en_rd						(1'b1)										,
+.en_MAC						(1'b1)										,
+.en_MAC_out					(1'b1)										,
+.en_act						(1'b1)										,
+.en_act_out					(1'b1)										,
+.en_pool					(1'b1)											,
+.en_pool_out				(1'b1)											,
+.N	('h0123456789ABCDEFFEDCBA987654321ABCDEFABCDEF0123456789ABCDEFFEDCBA987654321ABCDEFABCDEF)						, // [199:0] N
+.F	('hABCDEF0123456FED987)						, // [71:0] F
+.Y(Y)
+);
+
+assign Output_1 = Y[0];
+assign Output_Bus = {Y[17:0] , Y[17:5]};
+endmodule

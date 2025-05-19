@@ -1,0 +1,89 @@
+/*
+ * constants.h
+ *
+ *  Created on: Feb 6, 2023
+ *      Author: aamalik3
+ */
+
+/**************************** Type Definitions *******************************/
+#define PLAIN_FRAME			0x01000000
+#define DDR_MEMORY_LOCATION 0x00200000
+#define MSB_DUMP_LOCATION 	0x00300000
+#define LSB_DUMP_LOCATION 	0x00500000
+//#define LSB_DUMP_LOCATION 	0x02000000
+#define FAR_1 				0x0042239F
+#define FAR_2 				0x0042231F
+#define Frame_Data_Location	0x00000074
+#define FRAME_2_START		0x000003E0
+#define TEMPLATE_SIZE		 (984)/4 	//2660
+//#define SWAP_ON		 		0x1U
+#define NULL_FRAME			"Null.hex"
+#define F_TEMPLATE			"Frame.hex"
+#define DELAY_DURATION		0001000000
+#define PL_CLK0 			0xF8000178
+#define PL_CLK1 			0xF8000188
+#define PL_CLK2 			0xF8000198
+#define PL_CLK3 			0xF80001A8
+
+#define BRAM_MASK 			0xFFFDFFFF
+//#define elements			(sizeof(FAR_ARRAY) / sizeof(FAR_ARRAY[0]))
+#define elements			(1)
+
+#define Size   				416
+#define Digest_Size   	    32
+#define AES128 				1
+#define CTR    				1
+#define Digest_Array_Size   elements * Digest_Size * sizeof(u8)
+#define BYPASS_SECURITY     1
+/**************************** Type Definitions *******************************/
+
+//#define BFS			0x1U
+//#define COREMARK      0x1U
+//#define DHRYSTONE     0x1U
+//#define GEMM          0x1U
+//#define KMP           0x1U
+//#define MERGE_SORT    0x1U
+//#define NW            0x1U
+//#define AES           0x1U
+#define AES1MILLION   0x1U
+//#define FALCON          0x1U
+//#define FALCON0DELAY    0x1U
+
+#ifdef BFS
+	#define FILE_M				"bfs.bin"
+	#define FILE_L				"bfs.bin"
+#elif COREMARK
+	#define FILE_M				"coremark.bin"
+	#define FILE_L				"coremark.bin"
+#elif DHRYSTONE
+	#define FILE_M				"dhrystone.bin"
+	#define FILE_L				"dhrystone.bin"
+#elif GEMM
+	#define FILE_M				"gemm.bin"
+	#define FILE_L				"gemm.bin"
+#elif KMP
+	#define FILE_M				"kmp.bin"
+	#define FILE_L				"kmp.bin"
+#elif MERGE_SORT
+	#define FILE_M				"merge.bin"
+	#define FILE_L				"merge.bin"
+#elif NW
+	#define FILE_M				"nw.bin"
+	#define FILE_L				"nw.bin"
+#elif FALCON
+	#define FILE_M				"falcon.bin"
+	#define FILE_L				"falcon.bin"
+#elif FALCON0DELAY
+	#define FILE_M				"falcon0D.bin"
+	#define FILE_L				"falcon0D.bin"
+#elif AES
+	#define FILE_M				"RAP.bin"
+	#define FILE_L				"RAP.bin"
+#elif AES1MILLION
+	#define FILE_M				"RAP1M.bin"
+	#define FILE_L				"RAP1M.bin"
+#endif
+
+#define FILE_M_SIZE			 (1394316)/4	//7446 this is size of the file (not size on disk)
+#define FILE_L_SIZE			 (1394316)/4 	//6916
+
