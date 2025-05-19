@@ -145,3 +145,7 @@ file delete ./$benchmarkname/${benchmarkname}.prm
 report_utilization -hierarchical > ./$benchmarkname/${benchmarkname}_area.txt
 report_utilization -name ./$benchmarkname/${benchmarkname}_area_utilization
 ```
+
+🛡️ License
+
+This project is licensed under the MIT License. Use, modification, and distribution are permitted, provided that proper credit is given to the original authors. The code is provided "as is," without warranty of any kind, express or implied. Use at your own risk.
