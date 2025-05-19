@@ -44,47 +44,47 @@ The benchamrks are divided into two main categories
 
 ## Directory Structure
  Bencharks
- |_ How To
-	|_ BaseProject
-	|_ ctr_example
-	|_ RTL_IP
-	|_ User Guide
-	|_ Useful commands
- |_ PL-based Accelerators
-	|_ FFT
-	|_ H.264
-	|_ Image Classfication 
-	|_ Image Processor 
-	|_ JPEG Decoder
-	|_ PNG Decoder
-	|_ ML-KEM (Khyber)
-	|_ OpenNOC
-	|_ Scalable Matrix Multiplication
-	|_ Trigonometry Core
- |_ RISC-V Accelerators
-	|_ Accelerator Source Code
-	   |_ AES-128   
-	   |_ SHA-256   
-	   |_ GEMM      
-	   |_ BFS       
-	   |_ Sort      
-	   |_ NW        
-	   |_ KMP       
-	   |_ Dhrystone 
-	   |_ Coremark 
-	   |_ Falcon-Key-Gen
-	   |_ Falcon-Sign-Gen
-	   |_ Falcon-Sign-Verif	   
-	|_ Bitfiles
-	|_ PR Checkpoints
-	|_ cv32e40x Source Code
-	|_ memfiles (RISC-V Generated files)
-	|_ RISC_BENCHMARKS_BASE_PROJ (Can be used to generate integrate new benchamrks)
-	|_ RISC_RTL_Project (Actual Project to test preemptions)
- |_ PS C Source Code
- |_ Utility
- |_ Frame.hex
- |_ README.md
+ |_How To
+	|_BaseProject
+	|_ctr_example
+	|_RTL_IP
+	|_User Guide
+	|_Useful commands
+ |_PL-based Accelerators
+	|_FFT
+	|_H.264
+	|_Image Classfication 
+	|_Image Processor 
+	|_JPEG Decoder
+	|_PNG Decoder
+	|_ML-KEM (Khyber)
+	|_OpenNOC
+	|_Scalable Matrix Multiplication
+	|_Trigonometry Core
+ |_RISC-V Accelerators
+	|_Accelerator Source Code
+	   |_AES-128   
+	   |_SHA-256   
+	   |_GEMM      
+	   |_BFS       
+	   |_Sort      
+	   |_NW        
+	   |_KMP       
+	   |_Dhrystone 
+	   |_Coremark 
+	   |_Falcon-Key-Gen
+	   |_Falcon-Sign-Gen
+	   |_Falcon-Sign-Verif	   
+	|_Bitfiles
+	|_PR Checkpoints
+	|_cv32e40x Source Code
+	|_memfiles (RISC-V Generated files)
+	|_RISC_BENCHMARKS_BASE_PROJ (Can be used to generate integrate new benchamrks)
+	|_RISC_RTL_Project (Actual Project to test preemptions)
+ |_PS C Source Code
+ |_Utility
+ |_Frame.hex
+ |_README.md
  
 ## Getting Started
 
