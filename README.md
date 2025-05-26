@@ -1,7 +1,7 @@
 ## Description
 
-The project encompasses the research done to integrate benchamrk supports in various benchmarks.
-The benchamrks are divided into two main categories
+The project encompasses the research done to integrate preemption support in various benchmarks.
+The benchmarks are divided into two main categories
 + PL-based Hardware Accelerators
 + RISC-V Processor-based Hardware Accelerators
 
