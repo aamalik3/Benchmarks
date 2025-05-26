@@ -27,20 +27,20 @@ The benchmarks are divided into two main categories
 
 
 ## Resource Utilization for RISC-V Processor-based Hardware Accelerators
-| Benchmark | Clock Cycles | LUTs | Flip Flops | Block RAM | DSPs | 
-|-----------|--------------|------|------------|-----------|------|
-| AES-128   | 8195		   | 3978 | 2353	   | 32 	   | 3    |
-| SHA-256   | 5330		   | 4070 | 2323	   | 32 	   | 3    |
-| GEMM      | 2681  	   | 4056 | 696		   | 32 	   | 3    |
-| BFS       | 13595  	   | 4059 | 700		   | 32 	   | 3    |
-| Sort      | 5468   	   | 4053 | 680		   | 32 	   | 3    |
-| NW        | 44707        | 4057 | 685		   | 32 	   | 3    |
-| KMP       | 18935        | 4053 | 695		   | 32 	   | 3    |
-| Dhrystone | 165207       | 4055 | 686		   | 32 	   | 3    |
-| Coremark  | 2159020      | 4052 | 694		   | 32 	   | 3    |
-| Falcon-Key-Gen|25551     | 4070 | 2356	   | 32 	   | 3    |
-| Falcon-Sign-Gen| 264591000  | 4070 | 2356	   | 32 	   | 3    |
-| Falcon-Sign-Verify|706555  | 4070 | 2356	   | 32 	   | 3    |
+| Benchmark | Clock Cycles | LUTs | Flip Flops | Block RAM | DSPs | Code Size (KB)|
+|-----------|--------------|------|------------|-----------|------|---------------|
+| AES-128   | 8195		   | 3978 | 2353	   | 32 	   | 3    |		81	      |
+| SHA-256   | 5330		   | 4070 | 2323	   | 32 	   | 3    |		77	      |
+| GEMM      | 2681  	   | 4056 | 696		   | 32 	   | 3    |		135	      |
+| BFS       | 13595  	   | 4059 | 700		   | 32 	   | 3    |		103	      |
+| Sort      | 5468   	   | 4053 | 680		   | 32 	   | 3    |		115	      |
+| NW        | 44707        | 4057 | 685		   | 32 	   | 3    |		116	      |
+| KMP       | 18935        | 4053 | 695		   | 32 	   | 3    |		8	      |
+| Dhrystone | 165207       | 4055 | 686		   | 32 	   | 3    |		73	      |
+| Coremark  | 2159020      | 4052 | 694		   | 32 	   | 3    |		93	      |
+| Falcon-Key-Gen|25551     | 4070 | 2356	   | 32 	   | 3    |		38	      |
+| Falcon-Sign-Gen| 264591000  | 4070 | 2356	   | 32 	   | 3    |		63	      |
+| Falcon-Sign-Verify|706555  | 4070 | 2356	   | 32 	   | 3    |		35	      |
 
 ## Directory Structure
 ```plaintext
