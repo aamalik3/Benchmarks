@@ -17,7 +17,6 @@ The benchmarks are divided into two main categories
 | hardh264 | 171,029 cycles | 3034 | 1095 | 1.5 | 2 |
 | Image Processor | 98,303 cycles | 84 | 8 | 0 | 0 |
 | JPEG decoder (Image 001) | 78,652 cycles | 2334 | 469 | 4.5 | 0 |
-| NoC | 49,956 cycles | Area | Too | Large | |
 | Kyber Server | 34,806 cycles | 7016 | 2985 | 3 | 2 |
 | Kyber Client | 20,802 cycles | 7283 | 3002 | 3 | 2 |
 | FFT | 3,274 cycles | 2508 | 6096 | 3 | 32 | 
