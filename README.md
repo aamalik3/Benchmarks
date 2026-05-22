@@ -154,7 +154,7 @@ This project is licensed under the MIT License. Use, modification, and distribut
 
 **1. EPOCH: Enabling preemption operation for context saving in heterogeneous FPGA systems**  
 **Authors:** Arsalan Ali Malik, Emre Karabult, Aydin Aysu  
-**Journal:** IEEE Access, 2026  
+**Journal:** IEEE Access, 2026, Volume 14, Pages 71110-71125
 **DOI:** 10.1109/ACCESS.2026.3692398  
 
 **BibTeX reference:**
@@ -167,10 +167,10 @@ This project is licensed under the MIT License. Use, modification, and distribut
   publisher={IEEE}
 }
 ```
-2. Preemption-Enhanced Benchmark Suite for FPGAs
-Authors: Arsalan Ali Malik, John Buchanan, Aydin Aysu
-Journal: IEEE Access, 2026, Volume 14, Pages 10510–10525
-DOI: 10.1109/ACCESS.2026.3655332
+**2. Preemption-Enhanced Benchmark Suite for FPGAs**
+**Authors:** Arsalan Ali Malik, John Buchanan, Aydin Aysu
+**Journal:** IEEE Access, 2026, Volume 14, Pages 10510–10525
+**DOI:** 10.1109/ACCESS.2026.3655332
 
 **BibTeX reference:**
 ```bibtex
