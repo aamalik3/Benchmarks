@@ -151,7 +151,7 @@ report_utilization -name ./$benchmarkname/${benchmarkname}_area_utilization
 **1. EPOCH: Enabling preemption operation for context saving in heterogeneous FPGA systems**  
 **Authors:** Arsalan Ali Malik, Emre Karabult, Aydin Aysu  
 **Journal:** IEEE Access, 2026  
-**DOI:** 10.1109/ACCESS.2026.3692398
+**DOI:** 10.1109/ACCESS.2026.3692398  
 
 **BibTeX reference:**
 ```bibtex
@@ -163,13 +163,12 @@ report_utilization -name ./$benchmarkname/${benchmarkname}_area_utilization
   publisher={IEEE}
 }
 
-**2. Preemption-Enhanced Benchmark Suite for FPGAs**
-**Authors:** Arsalan Ali Malik, John Buchanan, Aydin Aysu
-**Journal:** IEEE Access, 2026, Volume 14, Pages 10510–10525
-**DOI:** 10.1109/ACCESS.2026.3655332
+2. Preemption-Enhanced Benchmark Suite for FPGAs
+Authors: Arsalan Ali Malik, John Buchanan, Aydin Aysu
+Journal: IEEE Access, 2026, Volume 14, Pages 10510–10525
+DOI: 10.1109/ACCESS.2026.3655332
 
 **BibTeX reference:**
-```bibtex
 @ARTICLE{11357898,
   author={Malik, Arsalan Ali and Buchanan, John and Aysu, Aydin},
   journal={IEEE Access}, 
@@ -180,7 +179,6 @@ report_utilization -name ./$benchmarkname/${benchmarkname}_area_utilization
   keywords={Field programmable gate arrays; Benchmark testing; Processor scheduling; Logic; Program processors; Table lookup; Fabrics; Cryptography; Videos; Systematics; Multi-tenant FPGAs; preemption; context save-and-restore; partial reconfiguration (PR); state-preservation; FPGA scheduling},
   doi={10.1109/ACCESS.2026.3655332}
 }
-
 
 
 🛡️ License
