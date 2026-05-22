@@ -145,6 +145,10 @@ report_utilization -hierarchical > ./$benchmarkname/${benchmarkname}_area.txt
 report_utilization -name ./$benchmarkname/${benchmarkname}_area_utilization
 ```
 
+🛡️ License
+
+This project is licensed under the MIT License. Use, modification, and distribution are permitted, provided that proper credit is given to the original authors. The code is provided "as is," without warranty of any kind, express or implied. Use at your own risk.
+
 
 ## Publications
 
@@ -162,13 +166,14 @@ report_utilization -name ./$benchmarkname/${benchmarkname}_area_utilization
   year={2026},
   publisher={IEEE}
 }
-
+```
 2. Preemption-Enhanced Benchmark Suite for FPGAs
 Authors: Arsalan Ali Malik, John Buchanan, Aydin Aysu
 Journal: IEEE Access, 2026, Volume 14, Pages 10510–10525
 DOI: 10.1109/ACCESS.2026.3655332
 
 **BibTeX reference:**
+```bibtex
 @ARTICLE{11357898,
   author={Malik, Arsalan Ali and Buchanan, John and Aysu, Aydin},
   journal={IEEE Access}, 
@@ -179,8 +184,6 @@ DOI: 10.1109/ACCESS.2026.3655332
   keywords={Field programmable gate arrays; Benchmark testing; Processor scheduling; Logic; Program processors; Table lookup; Fabrics; Cryptography; Videos; Systematics; Multi-tenant FPGAs; preemption; context save-and-restore; partial reconfiguration (PR); state-preservation; FPGA scheduling},
   doi={10.1109/ACCESS.2026.3655332}
 }
+```
 
 
-🛡️ License
-
-This project is licensed under the MIT License. Use, modification, and distribution are permitted, provided that proper credit is given to the original authors. The code is provided "as is," without warranty of any kind, express or implied. Use at your own risk.
