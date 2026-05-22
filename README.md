@@ -163,12 +163,12 @@ report_utilization -name ./$benchmarkname/${benchmarkname}_area_utilization
   publisher={IEEE}
 }
 
-
 **2. Preemption-Enhanced Benchmark Suite for FPGAs**
 **Authors:** Arsalan Ali Malik, John Buchanan, Aydin Aysu
 **Journal:** IEEE Access, 2026, Volume 14, Pages 10510–10525
 **DOI:** 10.1109/ACCESS.2026.3655332
 
+**BibTeX reference:**
 ```bibtex
 @ARTICLE{11357898,
   author={Malik, Arsalan Ali and Buchanan, John and Aysu, Aydin},
