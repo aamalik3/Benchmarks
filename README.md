@@ -167,10 +167,10 @@ This project is licensed under the MIT License. Use, modification, and distribut
   publisher={IEEE}
 }
 ```
-**2. Preemption-Enhanced Benchmark Suite for FPGAs**
-**Authors:** Arsalan Ali Malik, John Buchanan, Aydin Aysu
-**Journal:** IEEE Access, 2026, Volume 14, Pages 10510–10525
-**DOI:** 10.1109/ACCESS.2026.3655332
+**2. Preemption-Enhanced Benchmark Suite for FPGAs**  
+**Authors:** Arsalan Ali Malik, John Buchanan, Aydin Aysu  
+**Journal:** IEEE Access, 2026, Volume 14, Pages 10510–10525  
+**DOI:** 10.1109/ACCESS.2026.3655332  
 
 **BibTeX reference:**
 ```bibtex
